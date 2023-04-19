@@ -7,7 +7,7 @@ import Cart from '../Cart/Cart';
 
 function App() {
   return (
-    <>
+    <div className="app">
       <header>
         <Navigation />
       </header>
@@ -20,7 +20,7 @@ function App() {
       <footer>
         <div>PLACEHOLDER</div>
       </footer>
-    </>
+    </div>
   );
 }
 
