@@ -1,0 +1,14 @@
+.home {
+  height: 100%;
+  border: 5px solid green;
+}
+
+.display-banner{
+  height: 40%;
+  border: 2px solid gray;
+}
+
+.orders-container{
+  height: 45%;
+  border: 2px solid whitesmoke;
+}

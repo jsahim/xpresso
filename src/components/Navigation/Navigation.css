@@ -1,0 +1,14 @@
+nav {
+  height: 100%;
+}
+
+nav > ul {
+  height: inherit;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

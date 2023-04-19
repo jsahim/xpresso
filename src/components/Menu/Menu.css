@@ -1,0 +1,15 @@
+.menu {
+  height: 100%;
+  border: 5px solid yellow;
+  display: hidden;
+}
+
+.menu-options {
+  width: 10%;
+  border: 2px solid gray;
+}
+
+.type-container {
+  width: 90%;
+  border: 2px solid whitesmoke;
+}

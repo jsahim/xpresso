@@ -1,0 +1,13 @@
+.cart {
+  height: 100%;
+  border: 5px solid red;
+  display: flex;
+}
+
+.delivery-payment{
+  width: 50%;
+}
+
+.order-summary{
+  width: 50%;
+}
