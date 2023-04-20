@@ -4,11 +4,33 @@
   display: flex;
 }
 
+.line-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .delivery-payment{
   background-color: lightskyblue;
   width: 50%;
 }
 
-.order-summary{
+.order-summary {
+  text-align: end;
   width: 50%;
+}
+
+.summary-header {
+  text-align: start;
+}
+
+.conf-screen {
+  background-color: green;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 50%;
+  z-index: 1;
 }

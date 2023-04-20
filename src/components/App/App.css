@@ -4,17 +4,26 @@
   flex-direction: column;
 }
 
+header {
+  height: 15vh;
+  background-color: blueviolet;
+  z-index: 1;
+}
+
 main {
-  height: 80%;
+  height: 80vh;
   background-color: gainsboro;
 }
 
-header {
-  height: 15%;
-  background-color: blueviolet;
+.cart-banner {
+  font-size: x-large;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 footer {
-  height: 5%;
+  height: 10vh;
   background-color: violet;
+  z-index: 1;
 }
