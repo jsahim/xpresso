@@ -2,7 +2,7 @@ import './Profile.css'
 
 function Profile(){
   return (
-    <div className='profile hidden'>
+    <div className='profile'>
       <p>/profile</p>
       <section className="user-details">
         <article/>

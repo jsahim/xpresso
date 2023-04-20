@@ -2,7 +2,7 @@ import './Home.css'
 
 function Home(){
   return (
-    <div className='home hidden'>
+    <div className='home'>
       <p>/home</p>
       <section className="display-banner">
       </section>
