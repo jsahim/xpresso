@@ -1,5 +1,4 @@
 .drinks-container {
-  margin: 0%;
-  height: 100%;
+  height: 80vh;
   overflow: scroll;
 }

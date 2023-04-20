@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
+import { Switch, Route, Redirect, NavLink, useLocation } from 'react-router-dom';
 import cleanDrinkData from '../../utils/utilities';
 import sampleUser from '../../utils/sampleUser';
 import Navigation from '../Navigation/Navigation';
@@ -16,6 +16,8 @@ function App() {
   const [placedOrders, setPlacedOrders] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
+  const location = useLocation()
+
 
   useEffect(() => {
     getCoffeeDrinks()
@@ -34,13 +36,12 @@ function App() {
     }
   }
 
-
   const displayCartMessage = () => {
-    if(drinksInCart.length){
+    if(drinksInCart.length && location.pathname !== "/checkout"){
       return <>
               <p>There are {drinksInCart.length} item(s) in your cart.</p>
               <NavLink to="/checkout"><button>CHECKOUT</button></NavLink>
-              </>
+            </>
     }
   } 
 
