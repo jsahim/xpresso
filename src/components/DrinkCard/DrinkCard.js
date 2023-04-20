@@ -1,7 +1,7 @@
 import './DrinkCard.css'
 import { useState } from 'react';
 
-function DrinkCard({image, name, id, description, ingredients, oneSize, small, medium, large}){
+function DrinkCard({image, name, id, description, ingredients, oneSize, small, medium, large, addToCart}){
 
   const [drinkSelect, setDrinkSelect] = useState(null)
   const [sizeSelect, setSizeSelect] = useState('')
@@ -11,7 +11,7 @@ function DrinkCard({image, name, id, description, ingredients, oneSize, small, m
   const sendToCart = (e, id, size) => {
     e.preventDefault()
     if(size){
-      console.log(id, size)
+      addToCart(id, size)
     } else {
       setSelectionError("YOU MUST SELECT A SIZE")
     }
@@ -65,6 +65,7 @@ function DrinkCard({image, name, id, description, ingredients, oneSize, small, m
               onChange={(e) => {
                 setSizeSelect(e.target.value)
                 setDrinkSelect(e.target.id)
+                setSelectionError("")
               }}
             />
             Medium: ${medium}

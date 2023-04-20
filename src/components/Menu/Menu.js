@@ -2,7 +2,7 @@ import './Menu.css'
 import { NavLink, Switch, Route, Redirect } from 'react-router-dom';
 import DrinksContainer from '../DrinksContainer/DrinksContainer';
 
-function Menu({drinks}){
+function Menu({drinks, addToCart}){
   return (
     <div className='menu'>
       <section className="menu-options">
@@ -15,7 +15,7 @@ function Menu({drinks}){
       </section>
       <section className="type-container">
         <Switch>
-          <Route path="/menu/:drink" render={({match}) => <DrinksContainer drinks={drinks} matchType={match.params.drink} />}/> 
+          <Route path="/menu/:drink" render={({match}) => <DrinksContainer drinks={drinks} matchType={match.params.drink} addToCart={addToCart} />}/> 
           <Redirect from="/menu" to="/menu/all-drinks"/> 
         </Switch>
       </section>

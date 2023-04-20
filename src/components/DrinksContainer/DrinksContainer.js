@@ -1,7 +1,7 @@
 import './DrinksContainer.css';
 import DrinkCard from '../DrinkCard/DrinkCard'
 
-function DrinksContainer({drinks, matchType}){
+function DrinksContainer({drinks, matchType, addToCart}){
   let filteredDrinks
   if(matchType === "hot-drinks"){
     filteredDrinks = drinks.filter(drink => drink.type === "hot")
@@ -25,6 +25,7 @@ function DrinksContainer({drinks, matchType}){
         small={drink.small}
         medium={drink.medium}
         large={drink.large}
+        addToCart={addToCart}
       />
     )
   })

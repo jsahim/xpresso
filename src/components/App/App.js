@@ -12,6 +12,7 @@ import Cart from '../Cart/Cart';
 function App() {
 
   const [coffeeDrinks, setCoffeeDrinks] = useState([]);
+  const [drinksInCart, setDrinksInCart] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
 
@@ -32,15 +33,28 @@ function App() {
     }
   }
 
+  const addToCart = (id, size) => {
+    const locatedDrink = coffeeDrinks.find(drink => drink.id == id)
+    const formattedDrink = {
+      id: locatedDrink.id,
+      quantity: "1",
+      name: locatedDrink.name,
+      size: size,
+      price: locatedDrink[size]
+    }
+    setDrinksInCart([...drinksInCart, formattedDrink])
+  }
+
   return (
     <div className="app">
       <header>
         <Navigation />
       </header>
+      {error && <h3>{error}</h3>}
       <main>
         <Switch>
           <Route path="/home" render={() => <Home />}/> 
-          <Route path="/menu" render={() => <Menu drinks={coffeeDrinks} />}/> 
+          <Route path="/menu" render={() => <Menu drinks={coffeeDrinks} addToCart={addToCart}/>}/> 
           <Route path="/profile" render={() => <Profile user={sampleUser}/>}/> 
           <Route path="/checkout" render={() => <Cart user={sampleUser}/>}/> 
           <Redirect from="/" to="/home"/>
