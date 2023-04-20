@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import cleanDrinkData from '../../utils/utilities';
+import sampleUser from '../../utils/sampleUser';
 import Navigation from '../Navigation/Navigation';
 import Home from '../Home/Home';
 import Menu from '../Menu/Menu';
@@ -11,6 +12,7 @@ import Cart from '../Cart/Cart';
 function App() {
 
   const [coffeeDrinks, setCoffeeDrinks] = useState([]);
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
 
   useEffect(() => {
@@ -39,8 +41,8 @@ function App() {
         <Switch>
           <Route path="/home" render={() => <Home />}/> 
           <Route path="/menu" render={() => <Menu drinks={coffeeDrinks} />}/> 
-          <Route path="/profile" render={() => <Profile />}/> 
-          <Route path="/checkout" render={() => <Cart />}/> 
+          <Route path="/profile" render={() => <Profile user={sampleUser}/>}/> 
+          <Route path="/checkout" render={() => <Cart user={sampleUser}/>}/> 
           <Redirect from="/" to="/home"/>
         </Switch>
       </main>

@@ -1,4 +1,4 @@
-import supplementData from "./supplementData"
+import supplementData from "./moreDrinkData"
 
 const cleanDrinkData = (hotData, coldData) => {
   let cleanHotData, cleanIcedData
