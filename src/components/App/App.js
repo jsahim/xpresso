@@ -38,7 +38,7 @@ function App() {
       <main>
         <Switch>
           <Route path="/home" render={() => <Home />}/> 
-          <Route path="/menu" render={() => <Menu />}/> 
+          <Route path="/menu" render={() => <Menu drinks={coffeeDrinks} />}/> 
           <Route path="/profile" render={() => <Profile />}/> 
           <Route path="/checkout" render={() => <Cart />}/> 
           <Redirect from="/" to="/home"/>
