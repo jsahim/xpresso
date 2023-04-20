@@ -1,4 +1,3 @@
-import userEvent from '@testing-library/user-event';
 import './DrinkCard.css'
 import { useState } from 'react';
 
@@ -12,9 +11,9 @@ function DrinkCard({image, name, id, description, ingredients, oneSize, small, m
   const sendToCart = (e, id, size) => {
     e.preventDefault()
     if(size){
-    console.log(id, size)
+      console.log(id, size)
     } else {
-      setSelectionError("PLEASE SELECT A SIZE")
+      setSelectionError("YOU MUST SELECT A SIZE")
     }
   }
 
@@ -22,7 +21,7 @@ function DrinkCard({image, name, id, description, ingredients, oneSize, small, m
     <div className='drink-card'>
       <img src={image} alt={name}/>
       <h3>{name}</h3>
-      <p>{ingredients}</p>
+      <p>- {ingredients}</p>
       <p>{description}</p>
       <p>Please select your drink size:</p>
       <form>
@@ -85,7 +84,10 @@ function DrinkCard({image, name, id, description, ingredients, oneSize, small, m
             Large: ${large}
           </label>
         </>}
-        <input type="submit" value="Add to Cart" onClick={(e) => sendToCart(e, drinkSelect, sizeSelect)} />
+        <input type="submit" value="Add to Cart" onClick={(e) => {
+          sendToCart(e, drinkSelect, sizeSelect)
+          setSizeSelect("")
+          }}/>
         {selectionError && <p>{selectionError}</p> }
       </form>
     </div>
