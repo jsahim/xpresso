@@ -1,7 +1,6 @@
 import './DrinkCard.css'
 
 function DrinkCard(props){
-  console.log(props.image)
   return (
     <div className='drink-card'>
       <img src={props.image} alt={props.name}/>

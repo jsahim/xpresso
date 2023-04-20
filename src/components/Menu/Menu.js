@@ -1,8 +1,6 @@
 import './Menu.css'
 import { NavLink, Switch, Route, Redirect } from 'react-router-dom';
-import AllDrinks from '../AllDrinks/AllDrinks';
-import HotDrinks from '../HotDrinks/HotDrinks';
-import IcedDrinks from '../IcedDrinks/IcedDrinks';
+import DrinksContainer from '../DrinksContainer/DrinksContainer';
 
 function Menu({drinks}){
   return (
@@ -17,10 +15,8 @@ function Menu({drinks}){
       </section>
       <section className="type-container">
         <Switch>
-          <Route path="/menu/all-drinks" render={() => <AllDrinks drinks={drinks} />}/> 
-          <Route path="/menu/hot-drinks" render={() => <HotDrinks />}/> 
-          <Route path="/menu/iced-drinks" render={() => <IcedDrinks />}/>
-          <Redirect from="/menu" to="/menu/all-drinks"/> 
+          <Route path="/menu/:drink" render={({match}) => <DrinksContainer drinks={drinks} matchType={match.params.drink} />}/> 
+          <Redirect from="/menu" to="/menu/all"/> 
         </Switch>
       </section>
     </div>
