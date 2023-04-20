@@ -2,8 +2,7 @@ import OrderCard from '../OrderCard/OrderCard';
 import './Home.css'
 
 function Home({orders}){
-  console.log(orders)
-  const allOrders = orders.map(order => <OrderCard conf={order.conf} lineItems={order.lineItems} total={order.total} />)
+  const allOrders = orders.map(order => <OrderCard key={Date.now()} conf={order.conf} lineItems={order.lineItems} total={order.total} />)
 
   return (
     <div className='home'>
@@ -12,7 +11,7 @@ function Home({orders}){
       </section>
       <h2>Previous Orders</h2>
       <section className="orders-container">
-        {!orders.length && <p>NO ORDERS</p>}
+        {!orders.length && <p>NO ORDERS HAVE BEEN PLACED YET</p>}
         {allOrders}
       </section>
     </div>

@@ -34,9 +34,21 @@ function App() {
     }
   }
 
+
+  const displayCartMessage = () => {
+    if(drinksInCart.length){
+      return <>
+              <p>There are {drinksInCart.length} item(s) in your cart.</p>
+              <NavLink to="/checkout"><button>CHECKOUT</button></NavLink>
+              </>
+    }
+  } 
+
   const addToCart = (id, size) => {
+    const key = Date.now()
     const locatedDrink = coffeeDrinks.find(drink => drink.id == id)
     const formattedDrink = {
+      key: key,
       id: locatedDrink.id,
       quantity: "1",
       name: locatedDrink.name,
@@ -44,6 +56,11 @@ function App() {
       price: locatedDrink[size]
     }
     setDrinksInCart([...drinksInCart, formattedDrink])
+  }
+
+  const removeFromCart = (key) => {
+    const filteredDrinks = drinksInCart.filter(drink => drink.key != key)
+    setDrinksInCart(filteredDrinks)
   }
 
   const addOrder = (conf, lineItems, total) => {
@@ -63,15 +80,14 @@ function App() {
           <Route path="/home" render={() => <Home orders={placedOrders}/>}/> 
           <Route path="/menu" render={() => <Menu drinks={coffeeDrinks} addToCart={addToCart}/>}/> 
           <Route path="/profile" render={() => <Profile user={sampleUser}/>}/> 
-          <Route path="/checkout" render={() => <Cart user={sampleUser} cartContents={drinksInCart} addOrder={addOrder}/>}/> 
+          <Route path="/checkout" render={() => <Cart user={sampleUser} cartContents={drinksInCart} addOrder={addOrder} removeItem={removeFromCart}/>}/> 
           <Redirect from="/" to="/home"/>
         </Switch>
       </main>
       <footer>
-        {drinksInCart.length > 0 && <div className="cart-banner">
-          <p>You have {drinksInCart.length} item(s) in your cart</p>
-          <NavLink to="/checkout"><button>CHECKOUT</button></NavLink>
-        </div>}
+        <div className="cart-banner">
+          {displayCartMessage()}
+        </div>
       </footer>
     </div>
   );
