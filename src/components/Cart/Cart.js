@@ -1,6 +1,12 @@
 import './Cart.css'
 
-function Cart(){
+function Cart({cartContents}){
+  const lineItems = cartContents.map(item => <p>{item.quantity}{item.name}{item.size}{item.price}</p>)
+  const orderTotal = cartContents.reduce((acc, item) => {
+    acc += item.price
+    return acc
+  }, 0)
+
   return (
     <div className='cart'>
       <section className="delivery-payment">
@@ -13,10 +19,8 @@ function Cart(){
       </section>
       <section className="order-summary">
         <h3>Order Summary</h3>
-            <article/>
-            <article/>
-            <article/>
-            <article/>
+        <div>{lineItems}</div>
+        <h3>{orderTotal}</h3>
         <button>Process Payment</button>
       </section>
     </div>

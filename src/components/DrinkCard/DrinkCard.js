@@ -85,7 +85,7 @@ function DrinkCard({image, name, id, description, ingredients, oneSize, small, m
             Large: ${large}
           </label>
         </>}
-        <input type="submit" value="Add to Cart" onClick={(e) => {
+        <input type="submit" value="Add to Order" onClick={(e) => {
           sendToCart(e, drinkSelect, sizeSelect)
           setSizeSelect("")
           }}/>

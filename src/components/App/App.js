@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import cleanDrinkData from '../../utils/utilities';
 import sampleUser from '../../utils/sampleUser';
 import Navigation from '../Navigation/Navigation';
@@ -50,18 +50,21 @@ function App() {
       <header>
         <Navigation />
       </header>
-      {error && <h3>{error}</h3>}
       <main>
+      {error && <h3>{error}</h3>}
         <Switch>
           <Route path="/home" render={() => <Home />}/> 
           <Route path="/menu" render={() => <Menu drinks={coffeeDrinks} addToCart={addToCart}/>}/> 
           <Route path="/profile" render={() => <Profile user={sampleUser}/>}/> 
-          <Route path="/checkout" render={() => <Cart user={sampleUser}/>}/> 
+          <Route path="/checkout" render={() => <Cart user={sampleUser} cartContents={drinksInCart}/>}/> 
           <Redirect from="/" to="/home"/>
         </Switch>
       </main>
       <footer>
-        <div>PLACEHOLDER</div>
+        {drinksInCart.length > 0 && <div className="cart-banner">
+          <p>You have {drinksInCart.length} item(s) in your cart</p>
+          <NavLink to="/checkout"><button>CHECKOUT</button></NavLink>
+        </div>}
       </footer>
     </div>
   );
