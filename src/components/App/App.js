@@ -1,5 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import cleanDrinkData from '../../utils/utilities';
 import Navigation from '../Navigation/Navigation';
 import Home from '../Home/Home';
@@ -35,10 +36,13 @@ function App() {
         <Navigation />
       </header>
       <main>
-        <Home />
-        <Menu />
-        <Profile />
-        <Cart />
+        <Switch>
+          <Route path="/home" render={() => <Home />}/> 
+          <Route path="/menu" render={() => <Menu />}/> 
+          <Route path="/profile" render={() => <Profile />}/> 
+          <Route path="/checkout" render={() => <Cart />}/> 
+          <Redirect from="/" to="/home"/>
+        </Switch>
       </main>
       <footer>
         <div>PLACEHOLDER</div>

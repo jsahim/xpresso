@@ -1,7 +1,7 @@
 .menu {
   height: 100%;
   border: 5px solid yellow;
-  display: hidden;
+  display: flex;
 }
 
 .menu-options {
