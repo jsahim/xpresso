@@ -4,7 +4,6 @@ function Cart(){
   return (
     <div className='cart'>
       <section className="delivery-payment">
-        <p>/checkout</p>
         <h3>Delivery</h3>
         <p>Delivery Detail 1</p>
         <p>Delivery Detail 2</p>
