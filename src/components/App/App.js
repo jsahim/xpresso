@@ -13,6 +13,7 @@ function App() {
 
   const [coffeeDrinks, setCoffeeDrinks] = useState([]);
   const [drinksInCart, setDrinksInCart] = useState([])
+  const [placedOrders, setPlacedOrders] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
 
@@ -45,6 +46,12 @@ function App() {
     setDrinksInCart([...drinksInCart, formattedDrink])
   }
 
+  const addOrder = (conf, lineItems, total) => {
+    const newOrder = {conf, lineItems, total}
+    setDrinksInCart([])
+    setPlacedOrders([newOrder,...placedOrders])
+  }
+
   return (
     <div className="app">
       <header>
@@ -53,10 +60,10 @@ function App() {
       <main>
       {error && <h3>{error}</h3>}
         <Switch>
-          <Route path="/home" render={() => <Home />}/> 
+          <Route path="/home" render={() => <Home orders={placedOrders}/>}/> 
           <Route path="/menu" render={() => <Menu drinks={coffeeDrinks} addToCart={addToCart}/>}/> 
           <Route path="/profile" render={() => <Profile user={sampleUser}/>}/> 
-          <Route path="/checkout" render={() => <Cart user={sampleUser} cartContents={drinksInCart}/>}/> 
+          <Route path="/checkout" render={() => <Cart user={sampleUser} cartContents={drinksInCart} addOrder={addOrder}/>}/> 
           <Redirect from="/" to="/home"/>
         </Switch>
       </main>
