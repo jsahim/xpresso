@@ -12,9 +12,9 @@ const cleanDrinkData = (hotData, coldData) => {
                 type: "hot", 
                 image: foundHotDrink.image,
                 oneSize: foundHotDrink.oneSize,
-                smallPrice: foundHotDrink.smallPrice,
-                mediumPrice: foundHotDrink.mediumPrice,
-                largePrice: foundHotDrink.largePrice
+                small: foundHotDrink.small,
+                medium: foundHotDrink.medium,
+                large: foundHotDrink.large
               }
     })
   } 
@@ -28,9 +28,9 @@ const cleanDrinkData = (hotData, coldData) => {
                 type: "iced", 
                 image: foundColdDrink.image,
                 oneSize: foundColdDrink.oneSize,
-                smallPrice: foundColdDrink.smallPrice,
-                mediumPrice: foundColdDrink.mediumPrice,
-                largePrice: foundColdDrink.largePrice
+                small: foundColdDrink.small,
+                medium: foundColdDrink.medium,
+                large: foundColdDrink.large
               }
     })
   }

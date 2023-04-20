@@ -22,9 +22,9 @@ function DrinksContainer({drinks, matchType}){
         type={drink.type}
         image={drink.image}
         oneSize={drink.oneSize}
-        smallPrice={drink.smallPrice}
-        mediumPrice={drink.mediumPrice}
-        largePrice={drink.largePrice}
+        small={drink.small}
+        medium={drink.medium}
+        large={drink.large}
       />
     )
   })
