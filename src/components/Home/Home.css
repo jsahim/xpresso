@@ -4,11 +4,12 @@
 }
 
 .display-banner{
+  text-align: center;
   height: 40%;
-  border: 2px solid gray;
+  background-color: bisque;
 }
 
 .orders-container{
   height: 45%;
-  border: 2px solid whitesmoke;
+  border: 2px solid red;
 }

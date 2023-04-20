@@ -1,4 +1,4 @@
-const supplementData = 
+const moreDrinkData = 
   [
     {
       name: "Black",
@@ -171,4 +171,4 @@ const supplementData =
     }
   ]
 
-  export default supplementData
+  export default moreDrinkData
