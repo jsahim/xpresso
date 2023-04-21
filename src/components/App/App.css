@@ -10,7 +10,7 @@ header {
 }
 
 main {
-  height: 80%;
+  min-height: 80%;
   background-color: gainsboro;
 }
 
@@ -27,5 +27,9 @@ main {
 
 footer {
   height: 10%;
-  background-color: violet;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  background-color: blueviolet;
 }

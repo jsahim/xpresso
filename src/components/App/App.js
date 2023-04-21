@@ -14,7 +14,6 @@ function App() {
   const [coffeeDrinks, setCoffeeDrinks] = useState([]);
   const [drinksInCart, setDrinksInCart] = useState([])
   const [placedOrders, setPlacedOrders] = useState([])
-  const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
   const location = useLocation()
 
@@ -38,10 +37,10 @@ function App() {
 
   const displayCartMessage = () => {
     if(drinksInCart.length && location.pathname !== "/checkout"){
-      return <>
-      <p>There are {drinksInCart.length} item(s) in your cart.</p>
-      <NavLink to="/checkout"><button>CHECKOUT</button></NavLink>
-      </>
+      return <footer>
+              <p>There are {drinksInCart.length} item(s) in your cart.</p>
+              <NavLink to="/checkout"><button>CHECKOUT</button></NavLink>
+            </footer>
     }
   } 
 
@@ -89,11 +88,7 @@ function App() {
           <Redirect from="/" to="/home"/>
         </Switch>
       </main>
-      <footer>
-        <div className="cart-banner">
           {displayCartMessage()}
-        </div>
-      </footer>
     </div>
   );
 }

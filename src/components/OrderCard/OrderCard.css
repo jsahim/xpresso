@@ -1,9 +1,14 @@
 .order-card {
+  font-family: 'Montserrat';
   color: white;
-  border-radius: 1%;
+  border-radius: 15px;
   border: 3px #31343a solid;
   background-color: #31343a;
   width: 35vmin;
   height: 35vmin;
   margin: 2vmin;
+}
+
+.order-content {
+  margin: 5%;
 }

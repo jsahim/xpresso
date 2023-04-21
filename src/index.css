@@ -1,12 +1,9 @@
 html, body {
   margin: 0;
   height: 100%;
+  font-family: 'Permanent Marker', cursive;
 }
 
 body {
   background-color: mediumturquoise;
-}
-
-.hidden {
-  display: none;
 }

@@ -1,18 +1,25 @@
 .menu {
-  border: 5px solid yellow;
   display: flex;
 }
 
 .menu-options {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   width: 10%;
   background-color: orange;
 }
 
 .menu-options > ul, li {
+  font-size: x-large;
   color: black;
-  margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.menu-options li {
+  margin-top: 15%;
+  margin-bottom: 15%;
 }
 
 .type-container {

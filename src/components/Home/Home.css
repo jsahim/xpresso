@@ -1,17 +1,21 @@
 .home {
   height: 100%;
-  border: 5px solid green;
 }
 
 .display-banner{
   text-align: center;
   height: 40%;
-  background-color: bisque;
+  background-color: orange;
+}
+
+.home h2 {
+  text-align: center;
 }
 
 .orders-container{
   height: 45%;
   display: flex;
+  justify-content: center;
 }
 
 .orders-container button {

@@ -12,11 +12,15 @@ function Cart({cartContents, addOrder, removeItem}){
     let amount = item.quantity
     let name = item.name
     let price = item.price
+    let newPrice = price.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    })
     return <div className='line-items'>
             <p>{amount}</p>
             <p>{name}</p>
             <p>{size}</p>
-            <p>{price}</p>
+            <p>{newPrice}</p>
             <button onClick={(e)=> removeItem(drinkCode)}>X</button>
           </div>
   })
@@ -25,6 +29,11 @@ function Cart({cartContents, addOrder, removeItem}){
     acc += item.price
     return acc
   }, 0)
+
+  const newTotal = orderTotal.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  })
 
   const processOrder = () => {
     const orderCode = Date.now().toString() + "O"
@@ -36,6 +45,7 @@ function Cart({cartContents, addOrder, removeItem}){
     <div className='cart'>
       {paymentProcessing && <div className='conf-screen'>
         <p>THANK YOU FOR YOUR ORDER!</p>
+        <p>Please click the "continue" button to view your order details.</p>
         <NavLink to="/home"><button onClick={()=> setPaymentProcessing(false)}>CONTINUE</button></NavLink>
         </div>}
       <section className="delivery-payment">
@@ -49,7 +59,7 @@ function Cart({cartContents, addOrder, removeItem}){
       <section className="order-summary">
         <h3 className='summary-header'>Order Summary</h3>
         <div>{lineItems}</div>
-        <h3>{orderTotal}</h3>
+        <h3>{newTotal}</h3>
         {cartContents.length && <button onClick={() => processOrder()}>PAY NOW</button>}
       </section>
     </div>

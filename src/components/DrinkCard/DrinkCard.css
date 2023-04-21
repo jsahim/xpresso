@@ -1,4 +1,5 @@
 .drink-card {
+  font-family: 'Montserrat';
   color: white;
   border-radius: 1%;
   border: 3px #31343a solid;
@@ -8,6 +9,20 @@
   margin: 2vmin;
 }
 
+.drink-card h2 {
+  font-family: 'Permanent Marker', cursive;
+  margin: 0%;
+  font-size: xx-large;
+}
+
 .drink-card > img {
   width: inherit;
+}
+
+.drink-details {
+  margin: 5%;
+}
+
+.drink-description {
+  font-size: small;
 }

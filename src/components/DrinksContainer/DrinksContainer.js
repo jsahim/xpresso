@@ -2,6 +2,7 @@ import './DrinksContainer.css';
 import DrinkCard from '../DrinkCard/DrinkCard'
 
 function DrinksContainer({drinks, matchType, addToCart}){
+
   let filteredDrinks
   if(matchType === "hot-drinks"){
     filteredDrinks = drinks.filter(drink => drink.type === "hot")
@@ -32,6 +33,7 @@ function DrinksContainer({drinks, matchType, addToCart}){
 
   return (
     <div className='drinks-container'>
+      {!chosenDrinks.length && <img src="https://intelligence.businesseventsthailand.com/files/site_loader/site_loader_image5.gif" className='loading'/>}
       {chosenDrinks}
     </div>
   );
