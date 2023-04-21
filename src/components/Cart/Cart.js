@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import './Cart.css'
 
-function Cart({cartContents, addOrder, removeItem}){
+function Cart({cartContents, addOrder, removeItem, user}){
   const [paymentProcessing, setPaymentProcessing] = useState(false)
 
   const lineItems = cartContents.map(item => {
@@ -64,13 +64,19 @@ function Cart({cartContents, addOrder, removeItem}){
         <NavLink to="/home"><button onClick={()=> setPaymentProcessing(false)}>CONTINUE</button></NavLink>
         </div>}
       <section className="delivery-payment">
-        <div className='cart-content'>
-          <h3>Delivery</h3>
-          <p>Delivery Detail 1</p>
-          <p>Delivery Detail 2</p>
-          <h3>Payment</h3>
-          <p>Payment Detail 1</p>
-          <p>Payment Detail 2</p>
+        <div className='cart-content delivery-details'>
+          <div className='delivery'>
+            <h3>Delivery</h3>
+            <p>{user.firstName} {user.lastName}</p>
+            <p>{user.street}</p>
+            <p>{user.city}, {user.state} {user.zip}</p>
+          </div>
+          <div className='delivery'>
+            <h3>Payment</h3>
+            <p>{user.ccType}</p>
+            <p>Exp: {user.ccExp}</p>
+            <p>{user.ccNum}</p>
+          </div>
         </div>
       </section>
       <section className="order-summary">

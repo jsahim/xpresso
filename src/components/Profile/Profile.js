@@ -5,7 +5,8 @@ function Profile({user}){
             <h2>ACCOUNT</h2>
             <section className="account-details">
               <h3>USER</h3>
-              <p>Name:<span>{user.firstName} {user.lastName}</span></p>
+              <p>First Name:<span>{user.firstName}</span></p>
+              <p>Last Name:<span>{user.lastName}</span></p>
               <p>DOB:<span>{user.dob}</span></p>
               <p>Email:<span>{user.email}</span></p>
               <p>Phone:<span>{user.phone}</span></p>
