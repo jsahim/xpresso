@@ -39,17 +39,17 @@ function App() {
   const displayCartMessage = () => {
     if(drinksInCart.length && location.pathname !== "/checkout"){
       return <>
-              <p>There are {drinksInCart.length} item(s) in your cart.</p>
-              <NavLink to="/checkout"><button>CHECKOUT</button></NavLink>
-            </>
+      <p>There are {drinksInCart.length} item(s) in your cart.</p>
+      <NavLink to="/checkout"><button>CHECKOUT</button></NavLink>
+      </>
     }
   } 
 
   const addToCart = (id, size) => {
-    const key = Date.now()
     const locatedDrink = coffeeDrinks.find(drink => drink.id == id)
+    const itemCode = Date.now().toString() + "I"
     const formattedDrink = {
-      key: key,
+      itemCode: itemCode,
       id: locatedDrink.id,
       quantity: "1",
       name: locatedDrink.name,
@@ -59,13 +59,17 @@ function App() {
     setDrinksInCart([...drinksInCart, formattedDrink])
   }
 
-  const removeFromCart = (key) => {
-    const filteredDrinks = drinksInCart.filter(drink => drink.key != key)
+  const removeFromCart = (code) => {
+    const filteredDrinks = drinksInCart.filter(drink => drink.itemCode != code)
     setDrinksInCart(filteredDrinks)
   }
 
-  const addOrder = (conf, lineItems, total) => {
-    const newOrder = {conf, lineItems, total}
+  const addOrder = (code, lineItems, total) => {
+    const newOrder = {
+      orderCode: code, 
+      lineItems: lineItems, 
+      total: total
+    }
     setDrinksInCart([])
     setPlacedOrders([newOrder,...placedOrders])
   }

@@ -2,7 +2,8 @@ import './OrderCard.css'
 
 function OrderCard({conf, lineItems, total}){
   const orderNum = conf.toString()
-  const timeStamp = new Date(conf).toString()
+  const time = Date.now()
+  const timeStamp = new Date(time).toString()
 
   return (
     <div className='order-card'>

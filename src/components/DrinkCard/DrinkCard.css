@@ -1,0 +1,13 @@
+.drink-card {
+  color: white;
+  border-radius: 1%;
+  border: 3px #31343a solid;
+  background-color: #31343a;
+  height: 60vmin;
+  width: 40vmin;
+  margin: 2vmin;
+}
+
+.drink-card > img {
+  width: inherit;
+}

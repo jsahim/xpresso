@@ -1,0 +1,9 @@
+.order-card {
+  color: white;
+  border-radius: 1%;
+  border: 3px #31343a solid;
+  background-color: #31343a;
+  width: 35vmin;
+  height: 35vmin;
+  margin: 2vmin;
+}

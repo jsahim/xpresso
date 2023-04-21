@@ -2,7 +2,7 @@ import OrderCard from '../OrderCard/OrderCard';
 import './Home.css'
 
 function Home({orders}){
-  const allOrders = orders.map(order => <OrderCard key={Date.now()} conf={order.conf} lineItems={order.lineItems} total={order.total} />)
+  const allOrders = orders.map(order => <OrderCard conf={order.orderCode} lineItems={order.lineItems} total={order.total} />)
 
   return (
     <div className='home'>

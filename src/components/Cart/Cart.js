@@ -4,21 +4,20 @@ import { NavLink } from 'react-router-dom'
 import './Cart.css'
 
 function Cart({cartContents, addOrder, removeItem}){
-
   const [paymentProcessing, setPaymentProcessing] = useState(false)
 
   const lineItems = cartContents.map(item => {
     let size = item.size === "small" ? "SM" : item.size === "medium" ? "MD" : item.size === "large" ? "LG" : "OS"
-    const key = item.key
-    const amount = item.quantity
-    const name = item.name
-    const price = item.price
+    let drinkCode = item.itemCode
+    let amount = item.quantity
+    let name = item.name
+    let price = item.price
     return <div className='line-items'>
             <p>{amount}</p>
             <p>{name}</p>
             <p>{size}</p>
             <p>{price}</p>
-            <button onClick={()=> removeItem(key)}>X</button>
+            <button onClick={(e)=> removeItem(drinkCode)}>X</button>
           </div>
   })
 
@@ -28,9 +27,9 @@ function Cart({cartContents, addOrder, removeItem}){
   }, 0)
 
   const processOrder = () => {
-    const confNum = Date.now()
+    const orderCode = Date.now().toString() + "O"
     setPaymentProcessing(true)
-    addOrder(confNum, lineItems, orderTotal)
+    addOrder(orderCode, lineItems, orderTotal)
   }
 
   return (
