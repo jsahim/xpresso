@@ -16,7 +16,8 @@ function App() {
   const [placedOrders, setPlacedOrders] = useState([])
   const [error, setError] = useState("")
   const location = useLocation()
-
+  const user = sampleUser
+  
 
   useEffect(() => {
     getCoffeeDrinks()
@@ -83,12 +84,12 @@ function App() {
         <Navigation />
       </header>
       <main>
-      {error && <h3>{error}</h3>}
+      {error && <h3>Sorry, there was an error because: {error}.</h3>}
         <Switch>
           <Route path="/home" render={() => <Home orders={placedOrders}/>}/> 
           <Route path="/menu" render={() => <Menu drinks={coffeeDrinks} addToCart={addToCart}/>}/> 
-          <Route path="/profile" render={() => <Profile user={sampleUser}/>}/> 
-          <Route path="/checkout" render={() => <Cart user={sampleUser} cartContents={drinksInCart} addOrder={addOrder} removeItem={removeFromCart}/>}/> 
+          <Route path="/profile" render={() => <Profile user={user}/>}/> 
+          <Route path="/checkout" render={() => <Cart user={user} cartContents={drinksInCart} addOrder={addOrder} removeItem={removeFromCart}/>}/> 
           <Redirect from="/" to="/home"/>
         </Switch>
       </main>

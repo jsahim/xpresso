@@ -1,4 +1,21 @@
 .profile {
   height: 100%;
-  border: 5px solid orange;
+  font-family: 'Montserrat';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-details {
+  width: 30%;
+}
+
+.account-details h3 {
+  text-decoration: underline;
+}
+
+.account-details p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

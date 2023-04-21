@@ -35,6 +35,21 @@ function Cart({cartContents, addOrder, removeItem}){
     currency: 'USD',
   })
 
+
+  const getOrderDisplay = () => {
+    if(!cartContents.length){
+      return <p>Cart is empty.</p>
+    } else {
+      return <>
+          {lineItems}
+          <div className='total-details'>
+            <p>TOTAL:</p>
+            <h3>{newTotal}</h3>
+          </div>
+          </>
+    }
+  }
+
   const processOrder = () => {
     const orderCode = Date.now().toString() + "O"
     setPaymentProcessing(true)
@@ -49,18 +64,21 @@ function Cart({cartContents, addOrder, removeItem}){
         <NavLink to="/home"><button onClick={()=> setPaymentProcessing(false)}>CONTINUE</button></NavLink>
         </div>}
       <section className="delivery-payment">
-        <h3>Delivery</h3>
-        <p>Delivery Detail 1</p>
-        <p>Delivery Detail 2</p>
-        <h3>Payment</h3>
-        <p>Payment Detail 1</p>
-        <p>Payment Detail 2</p>
+        <div className='cart-content'>
+          <h3>Delivery</h3>
+          <p>Delivery Detail 1</p>
+          <p>Delivery Detail 2</p>
+          <h3>Payment</h3>
+          <p>Payment Detail 1</p>
+          <p>Payment Detail 2</p>
+        </div>
       </section>
       <section className="order-summary">
-        <h3 className='summary-header'>Order Summary</h3>
-        <div>{lineItems}</div>
-        <h3>{newTotal}</h3>
-        {cartContents.length && <button onClick={() => processOrder()}>PAY NOW</button>}
+        <div className='cart-content'>
+          <h3 className='summary-header'>Order Summary</h3>
+          {getOrderDisplay()}
+          {cartContents.length && <button onClick={() => processOrder()}>PAY NOW</button>}
+        </div>
       </section>
     </div>
   )
