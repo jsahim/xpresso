@@ -24,8 +24,10 @@ function App() {
 
   const getCoffeeDrinks = async () => {
     try {
-      const hotResponse = await fetch("https://api.sampleapis.com/coffee/hot")
-      const coldResponse = await fetch("https://api.sampleapis.com/coffee/iced")
+      const [hotResponse, coldResponse] = await Promise.all([
+        fetch("https://api.sampleapis.com/coffee/hot"),
+        fetch("https://api.sampleapis.com/coffee/iced")
+      ]);
       const fetchedHotCoffees = await hotResponse.json()
       const fetchedIcedCoffees = await coldResponse.json()
       const allCleanedDrinks = cleanDrinkData(fetchedHotCoffees, fetchedIcedCoffees)
