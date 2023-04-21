@@ -70,7 +70,7 @@ function App() {
       total: total
     }
     setDrinksInCart([])
-    setPlacedOrders([newOrder,...placedOrders])
+    setPlacedOrders([...placedOrders, newOrder])
   }
 
   return (

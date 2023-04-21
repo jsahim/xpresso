@@ -12,3 +12,7 @@
 .order-content {
   margin: 5%;
 }
+
+.order-content .line-items p {
+  margin: 1%;
+}

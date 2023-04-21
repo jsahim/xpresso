@@ -10,7 +10,7 @@ function Home({orders}){
       </section>
       <h2>Previous Orders</h2>
       <section className="orders-container">
-        {!orders.length && <p>NO ORDERS HAVE BEEN PLACED YET</p>}
+        {!orders.length && <p className='no-orders'>No orders have been placed yet.</p>}
         {allOrders}
       </section>
     </div>
