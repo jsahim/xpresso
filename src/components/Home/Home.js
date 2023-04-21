@@ -2,16 +2,15 @@ import OrderCard from '../OrderCard/OrderCard';
 import './Home.css'
 
 function Home({orders}){
-  const allOrders = orders.map(order => <OrderCard key={Date.now()} conf={order.conf} lineItems={order.lineItems} total={order.total} />)
+  const allOrders = orders.map(order => <OrderCard conf={order.orderCode} lineItems={order.lineItems} total={order.total} timeStamp={order.timeStamp}/>)
 
   return (
     <div className='home'>
       <section className="display-banner">
-        <h3>REPLACE WITH SOME BANNER STUFF</h3>
       </section>
       <h2>Previous Orders</h2>
       <section className="orders-container">
-        {!orders.length && <p>NO ORDERS HAVE BEEN PLACED YET</p>}
+        {!orders.length && <p className='no-orders'>No orders have been placed yet.</p>}
         {allOrders}
       </section>
     </div>

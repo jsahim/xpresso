@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
+import { Switch, Route, Redirect, NavLink, useLocation } from 'react-router-dom';
 import cleanDrinkData from '../../utils/utilities';
 import sampleUser from '../../utils/sampleUser';
 import Navigation from '../Navigation/Navigation';
@@ -14,8 +14,9 @@ function App() {
   const [coffeeDrinks, setCoffeeDrinks] = useState([]);
   const [drinksInCart, setDrinksInCart] = useState([])
   const [placedOrders, setPlacedOrders] = useState([])
-  const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
+  const location = useLocation()
+
 
   useEffect(() => {
     getCoffeeDrinks()
@@ -23,8 +24,10 @@ function App() {
 
   const getCoffeeDrinks = async () => {
     try {
-      const hotResponse = await fetch("https://api.sampleapis.com/coffee/hot")
-      const coldResponse = await fetch("https://api.sampleapis.com/coffee/iced")
+      const [hotResponse, coldResponse] = await Promise.all([
+        fetch("https://api.sampleapis.com/coffee/hot"),
+        fetch("https://api.sampleapis.com/coffee/iced")
+      ]);
       const fetchedHotCoffees = await hotResponse.json()
       const fetchedIcedCoffees = await coldResponse.json()
       const allCleanedDrinks = cleanDrinkData(fetchedHotCoffees, fetchedIcedCoffees)
@@ -34,21 +37,20 @@ function App() {
     }
   }
 
-
   const displayCartMessage = () => {
-    if(drinksInCart.length){
-      return <>
+    if(drinksInCart.length && location.pathname !== "/checkout"){
+      return <footer>
               <p>There are {drinksInCart.length} item(s) in your cart.</p>
               <NavLink to="/checkout"><button>CHECKOUT</button></NavLink>
-              </>
+            </footer>
     }
   } 
 
   const addToCart = (id, size) => {
-    const key = Date.now()
     const locatedDrink = coffeeDrinks.find(drink => drink.id == id)
+    const itemCode = Date.now().toString() + "I"
     const formattedDrink = {
-      key: key,
+      itemCode: itemCode,
       id: locatedDrink.id,
       quantity: "1",
       name: locatedDrink.name,
@@ -58,15 +60,21 @@ function App() {
     setDrinksInCart([...drinksInCart, formattedDrink])
   }
 
-  const removeFromCart = (key) => {
-    const filteredDrinks = drinksInCart.filter(drink => drink.key != key)
+  const removeFromCart = (code) => {
+    const filteredDrinks = drinksInCart.filter(drink => drink.itemCode != code)
     setDrinksInCart(filteredDrinks)
   }
 
-  const addOrder = (conf, lineItems, total) => {
-    const newOrder = {conf, lineItems, total}
+  const addOrder = (code, lineItems, total) => {
+    const timeStamp = new Date().toString()
+    const newOrder = {
+      orderCode: code,
+      timeStamp: timeStamp,
+      lineItems: lineItems, 
+      total: total
+    }
     setDrinksInCart([])
-    setPlacedOrders([newOrder,...placedOrders])
+    setPlacedOrders([...placedOrders, newOrder])
   }
 
   return (
@@ -84,11 +92,7 @@ function App() {
           <Redirect from="/" to="/home"/>
         </Switch>
       </main>
-      <footer>
-        <div className="cart-banner">
           {displayCartMessage()}
-        </div>
-      </footer>
     </div>
   );
 }

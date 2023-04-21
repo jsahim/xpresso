@@ -4,21 +4,24 @@ import { NavLink } from 'react-router-dom'
 import './Cart.css'
 
 function Cart({cartContents, addOrder, removeItem}){
-
   const [paymentProcessing, setPaymentProcessing] = useState(false)
 
   const lineItems = cartContents.map(item => {
     let size = item.size === "small" ? "SM" : item.size === "medium" ? "MD" : item.size === "large" ? "LG" : "OS"
-    const key = item.key
-    const amount = item.quantity
-    const name = item.name
-    const price = item.price
+    let drinkCode = item.itemCode
+    let amount = item.quantity
+    let name = item.name
+    let price = item.price
+    let newPrice = price.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    })
     return <div className='line-items'>
             <p>{amount}</p>
             <p>{name}</p>
             <p>{size}</p>
-            <p>{price}</p>
-            <button onClick={()=> removeItem(key)}>X</button>
+            <p>{newPrice}</p>
+            <button onClick={(e)=> removeItem(drinkCode)}>X</button>
           </div>
   })
 
@@ -27,16 +30,22 @@ function Cart({cartContents, addOrder, removeItem}){
     return acc
   }, 0)
 
+  const newTotal = orderTotal.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  })
+
   const processOrder = () => {
-    const confNum = Date.now()
+    const orderCode = Date.now().toString() + "O"
     setPaymentProcessing(true)
-    addOrder(confNum, lineItems, orderTotal)
+    addOrder(orderCode, lineItems, orderTotal)
   }
 
   return (
     <div className='cart'>
       {paymentProcessing && <div className='conf-screen'>
         <p>THANK YOU FOR YOUR ORDER!</p>
+        <p>Please click the "continue" button to view your order details.</p>
         <NavLink to="/home"><button onClick={()=> setPaymentProcessing(false)}>CONTINUE</button></NavLink>
         </div>}
       <section className="delivery-payment">
@@ -50,7 +59,7 @@ function Cart({cartContents, addOrder, removeItem}){
       <section className="order-summary">
         <h3 className='summary-header'>Order Summary</h3>
         <div>{lineItems}</div>
-        <h3>{orderTotal}</h3>
+        <h3>{newTotal}</h3>
         {cartContents.length && <button onClick={() => processOrder()}>PAY NOW</button>}
       </section>
     </div>

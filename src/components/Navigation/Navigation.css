@@ -14,6 +14,22 @@ nav > ul {
 }
 
 nav li {
+  font-family: 'Permanent Marker', cursive;
   color: white;
-  font-size: x-large;
+  font-size: xx-large;
 }
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar a:hover li {
+  color: red;
+}
+
+.navbar a.active li {
+  text-decoration: underline;
+  color: red;
+}
+
+

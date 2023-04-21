@@ -1,5 +1,8 @@
 .drinks-container {
-  margin: 0%;
-  height: 100%;
-  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  overflow: auto;
 }

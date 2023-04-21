@@ -1,20 +1,28 @@
 .home {
   height: 100%;
-  border: 5px solid green;
 }
 
 .display-banner{
   text-align: center;
   height: 40%;
-  background-color: bisque;
+  background-color: orange;
+}
+
+.home h2 {
+  text-align: center;
 }
 
 .orders-container{
   height: 45%;
-  border: 2px solid red;
   display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
 }
 
 .orders-container button {
   display: none;
+}
+
+.no-orders {
+  font-family: 'Montserrat';
 }
