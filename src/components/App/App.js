@@ -64,8 +64,10 @@ function App() {
   }
 
   const addOrder = (code, lineItems, total) => {
+    const timeStamp = new Date().toString()
     const newOrder = {
-      orderCode: code, 
+      orderCode: code,
+      timeStamp: timeStamp,
       lineItems: lineItems, 
       total: total
     }
