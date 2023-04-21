@@ -7,7 +7,8 @@
   flex-direction: column;
   text-align: center;
   width: 10%;
-  background-color: orange;
+  background-color: #ffcc33;
+  border-right: 3px white solid;
 }
 
 .menu-options > ul, li {
@@ -27,15 +28,15 @@
 }
 
 .menubar a:hover li {
-  color: white;
+  color: black;
 }
 
 .menubar a.active li {
-  text-decoration: underline;
+  text-decoration: none;
   color: white;
+  background-color: #31343a;
 }
 
 .type-container {
   width: 90%;
-  border: 2px solid whitesmoke;
 }
