@@ -8,7 +8,7 @@ const cleanDrinkData = (hotData, coldData) => {
       return {
                 name: drink.title,
                 description: drink.description, 
-                ingredients: drink.ingredients,
+                ingredients: drink.ingredients.join(" ⎜ "),
                 type: "hot", 
                 image: foundHotDrink.image,
                 oneSize: foundHotDrink.oneSize,
@@ -24,7 +24,7 @@ const cleanDrinkData = (hotData, coldData) => {
       return {
                 name: drink.title,
                 description: drink.description, 
-                ingredients: drink.ingredients,
+                ingredients: drink.ingredients.join(" ⎜ "),
                 type: "iced", 
                 image: foundColdDrink.image,
                 oneSize: foundColdDrink.oneSize,

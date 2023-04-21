@@ -18,3 +18,18 @@ nav li {
   color: white;
   font-size: xx-large;
 }
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar a:hover li {
+  color: red;
+}
+
+.navbar a.active li {
+  text-decoration: underline;
+  color: red;
+}
+
+

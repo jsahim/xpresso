@@ -22,75 +22,64 @@ function DrinkCard({image, name, id, description, ingredients, oneSize, small, m
       <img src={image} alt={name}/>
       <div className='drink-details'>
         <h2>{name}</h2>
-        <p>- {ingredients}</p>
+        <p>► {ingredients}</p>
         <p className='drink-description'>{description}</p>
-        <p>Select your drink size:</p>
-        <form>
+        <p>Select a size:</p>
+        <form className='choose-size'>
+        <div className='size-btn-container'>
           {oneSize && <>
             <label>
-              <input
-                id={id}
-                type="radio"
-                value="oneSize"
-                checked={sizeSelect === "oneSize"}
+              <input id={id} type="radio" value="oneSize" checked={sizeSelect === "oneSize"}
                 onChange={(e) => {
                   setSizeSelect(e.target.value)
                   setDrinkSelect(e.target.id)
                   setSelectionError("")
                 }}
-              />
-              One Size: ${oneSize}
-            </label>
+              />One Size
+              </label>
+            <p>${oneSize}</p>
           </>}
           {!oneSize && <>
             <label>
-              <input
-                id={id}
-                type="radio"
-                value="small"
-                checked={sizeSelect === "small"}
+              <input id={id} type="radio" value="small" checked={sizeSelect === "small"}
                 onChange={(e) => {
                   setSizeSelect(e.target.value)
                   setDrinkSelect(e.target.id)
                   setSelectionError("")
                 }}
-              />
-              Small: ${small}
-            </label>
+              />Small
+              </label>
+            <p>${small}</p>
             <label>
-              <input
-                id={id}
-                type="radio"
-                value="medium"
-                checked={sizeSelect === "medium"}
+              <input id={id} type="radio" value="medium" checked={sizeSelect === "medium"}
                 onChange={(e) => {
                   setSizeSelect(e.target.value)
                   setDrinkSelect(e.target.id)
                   setSelectionError("")
                 }}
-              />
-              Medium: ${medium}
+              />Medium
             </label>
+            <p>${medium}</p>
             <label>
-              <input
-                id={id}
-                type="radio"
-                value="large"
-                checked={sizeSelect === "large"}
+              <input id={id} type="radio" value="large" checked={sizeSelect === "large"}
                 onChange={(e) => {
                   setSizeSelect(e.target.value)
                   setDrinkSelect(e.target.id)
                   setSelectionError("")
                 }}
-              />
-              Large: ${large}
+              />Large
             </label>
+            <p>${large}</p>
           </>}
-          <input type="submit" value="Add to Order" onClick={(e) => {
-            sendToCart(e, drinkSelect, sizeSelect)
-            setSizeSelect("")
-            }}/>
-          {selectionError && <p>{selectionError}</p> }
+          </div>
+          <div className='add-btn-container'>
+            <input type="submit" value="Add to Order" className='add-btn' 
+              onClick={(e) => {
+                sendToCart(e, drinkSelect, sizeSelect)
+                setSizeSelect("")
+              }}/>
+            {selectionError && <p>{selectionError}</p>}
+          </div>
         </form>
       </div>
     </div>

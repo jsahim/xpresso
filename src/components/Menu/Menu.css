@@ -22,6 +22,19 @@
   margin-bottom: 15%;
 }
 
+.menubar a {
+  text-decoration: none;
+}
+
+.menubar a:hover li {
+  color: white;
+}
+
+.menubar a.active li {
+  text-decoration: underline;
+  color: white;
+}
+
 .type-container {
   width: 90%;
   border: 2px solid whitesmoke;
