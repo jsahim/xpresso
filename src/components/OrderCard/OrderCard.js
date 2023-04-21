@@ -1,6 +1,6 @@
 import './OrderCard.css'
 
-function OrderCard({conf, lineItems, total, timeStamp}){
+function OrderCard({conf, lineItems, total, payment, timeStamp}){
   const orderNum = conf.toString()
   const newTotal = total.toLocaleString('en-US', {
     style: 'currency',
@@ -13,6 +13,7 @@ function OrderCard({conf, lineItems, total, timeStamp}){
         <p>ORDER: {orderNum}</p>
         <p>{timeStamp}</p>
         <div>ITEMS: {lineItems}</div>
+        <p>PAYMENT: {payment}</p>
         <p>TOTAL: {newTotal}</p>
       </div>
     </div>

@@ -27,6 +27,8 @@ main {
 }
 
 footer {
+  color: white;
+  letter-spacing: 3px;
   height: 5%;
   display: flex;
   justify-content: space-evenly;

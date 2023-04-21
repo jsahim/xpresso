@@ -38,7 +38,7 @@ function Cart({cartContents, addOrder, removeItem, user}){
 
   const getOrderDisplay = () => {
     if(!cartContents.length){
-      return <p>Cart is empty.</p>
+      return <p>Your Cart is Empty!</p>
     } else {
       return <>
           {lineItems}
@@ -53,7 +53,7 @@ function Cart({cartContents, addOrder, removeItem, user}){
   const processOrder = () => {
     const orderCode = Date.now().toString() + "O"
     setPaymentProcessing(true)
-    addOrder(orderCode, lineItems, orderTotal)
+    addOrder(orderCode, lineItems, orderTotal, user)
   }
 
   return (

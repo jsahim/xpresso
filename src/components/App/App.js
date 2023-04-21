@@ -66,12 +66,15 @@ function App() {
     setDrinksInCart(filteredDrinks)
   }
 
-  const addOrder = (code, lineItems, total) => {
+  const addOrder = (code, lineItems, total, user) => {
     const timeStamp = new Date().toString()
+    console.log(user)
+    const payment = `${user.ccType.toUpperCase()} -${user.ccNum.slice(-4)}`
     const newOrder = {
       orderCode: code,
       timeStamp: timeStamp,
-      lineItems: lineItems, 
+      lineItems: lineItems,
+      payment: payment,
       total: total
     }
     setDrinksInCart([])
