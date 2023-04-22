@@ -40,10 +40,10 @@ function App() {
 
   const displayCartMessage = () => {
     if(drinksInCart.length && location.pathname !== "/checkout"){
-      return <footer>
+      return <div className='message-container'>
               <p>There are {drinksInCart.length} item(s) in your cart.</p>
               <NavLink to="/checkout"><button className='checkout'>Checkout</button></NavLink>
-            </footer>
+            </div>
     }
   } 
 
@@ -95,7 +95,9 @@ function App() {
           <Redirect from="/" to="/home"/>
         </Switch>
       </main>
-          {displayCartMessage()}
+        <footer>
+        {displayCartMessage()}
+        </footer>
     </div>
   );
 }

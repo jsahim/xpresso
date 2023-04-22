@@ -1,5 +1,6 @@
 .menu {
   display: flex;
+  height: inherit;
 }
 
 .menu-options {
@@ -8,7 +9,7 @@
   text-align: center;
   width: 10%;
   background-color: #ffcc33;
-  border-right: 3px white solid;
+  border-right: 3px rgb(165, 139, 9) solid;
 }
 
 .menu-options > ul, li {
@@ -40,4 +41,5 @@
 
 .type-container {
   width: 90%;
+  overflow: auto;
 }
