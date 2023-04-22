@@ -68,7 +68,6 @@ function App() {
 
   const addOrder = (code, lineItems, total, user) => {
     const timeStamp = new Date().toString()
-    console.log(user)
     const payment = `${user.ccType.toUpperCase()} -${user.ccNum.slice(-4)}`
     const newOrder = {
       orderCode: code,

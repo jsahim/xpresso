@@ -62,10 +62,6 @@
   border-radius: 4px;
 }
 
-.choose-size input[type="radio"]:checked {
-  background-color:red;
-}
-
 .choose-size label:hover {
   background-color: burlywood;
 }
@@ -73,4 +69,7 @@
 .choose-size p {
   padding: 5px;
   font-size: large;
+}
+.choose-size input[type="radio"]:checked {
+  background-color:red;
 }

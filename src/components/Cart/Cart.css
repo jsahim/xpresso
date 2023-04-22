@@ -25,6 +25,7 @@
 }
 
 .conf-screen {
+  text-align: center;
   background-color: gray;
   position: absolute;
   top: 50%;
