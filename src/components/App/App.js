@@ -16,7 +16,8 @@ function App() {
   const [placedOrders, setPlacedOrders] = useState([])
   const [error, setError] = useState("")
   const location = useLocation()
-
+  const user = sampleUser
+  
 
   useEffect(() => {
     getCoffeeDrinks()
@@ -65,12 +66,15 @@ function App() {
     setDrinksInCart(filteredDrinks)
   }
 
-  const addOrder = (code, lineItems, total) => {
+  const addOrder = (code, lineItems, total, user) => {
     const timeStamp = new Date().toString()
+    console.log(user)
+    const payment = `${user.ccType.toUpperCase()} -${user.ccNum.slice(-4)}`
     const newOrder = {
       orderCode: code,
       timeStamp: timeStamp,
-      lineItems: lineItems, 
+      lineItems: lineItems,
+      payment: payment,
       total: total
     }
     setDrinksInCart([])
@@ -83,12 +87,12 @@ function App() {
         <Navigation />
       </header>
       <main>
-      {error && <h3>{error}</h3>}
+      {error && <h3>Sorry, there was an error because: {error}.</h3>}
         <Switch>
           <Route path="/home" render={() => <Home orders={placedOrders}/>}/> 
           <Route path="/menu" render={() => <Menu drinks={coffeeDrinks} addToCart={addToCart}/>}/> 
-          <Route path="/profile" render={() => <Profile user={sampleUser}/>}/> 
-          <Route path="/checkout" render={() => <Cart user={sampleUser} cartContents={drinksInCart} addOrder={addOrder} removeItem={removeFromCart}/>}/> 
+          <Route path="/profile" render={() => <Profile user={user}/>}/> 
+          <Route path="/checkout" render={() => <Cart user={user} cartContents={drinksInCart} addOrder={addOrder} removeItem={removeFromCart}/>}/> 
           <Redirect from="/" to="/home"/>
         </Switch>
       </main>

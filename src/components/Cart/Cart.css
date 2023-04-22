@@ -34,3 +34,27 @@
   height: 50%;
   z-index: 1;
 }
+
+.delivery {
+  margin-bottom: 10%;
+}
+
+.cart-content {
+  margin: 10%;
+}
+
+.total-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 1%;
+}
+
+.total-details h3 {
+  font-size: x-large;
+}
+
+.sub-head {
+  font-family: 'Permanent Marker', cursive;
+  text-align: left;
+}

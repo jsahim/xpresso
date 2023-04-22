@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import './Cart.css'
 
-function Cart({cartContents, addOrder, removeItem}){
+function Cart({cartContents, addOrder, removeItem, user}){
   const [paymentProcessing, setPaymentProcessing] = useState(false)
 
   const lineItems = cartContents.map(item => {
@@ -35,10 +35,25 @@ function Cart({cartContents, addOrder, removeItem}){
     currency: 'USD',
   })
 
+
+  const getOrderDisplay = () => {
+    if(!cartContents.length){
+      return <p>Your Cart is Empty!</p>
+    } else {
+      return <>
+          {lineItems}
+          <div className='total-details'>
+            <p>TOTAL:</p>
+            <h3>{newTotal}</h3>
+          </div>
+          </>
+    }
+  }
+
   const processOrder = () => {
     const orderCode = Date.now().toString() + "O"
     setPaymentProcessing(true)
-    addOrder(orderCode, lineItems, orderTotal)
+    addOrder(orderCode, lineItems, orderTotal, user)
   }
 
   return (
@@ -49,18 +64,29 @@ function Cart({cartContents, addOrder, removeItem}){
         <NavLink to="/home"><button onClick={()=> setPaymentProcessing(false)}>CONTINUE</button></NavLink>
         </div>}
       <section className="delivery-payment">
-        <h3>Delivery</h3>
-        <p>Delivery Detail 1</p>
-        <p>Delivery Detail 2</p>
-        <h3>Payment</h3>
-        <p>Payment Detail 1</p>
-        <p>Payment Detail 2</p>
+        <div className='cart-content delivery-details'>
+          <h2 className='sub-head'>DELIVERY</h2>
+          <div className='delivery'>
+            <h3>Address</h3>
+            <p>{user.firstName} {user.lastName}</p>
+            <p>{user.street}</p>
+            <p>{user.city}, {user.state} {user.zip}</p>
+          </div>
+          <div className='delivery'>
+            <h3>Payment</h3>
+            <p>{user.ccType}</p>
+            <p>Exp: {user.ccExp}</p>
+            <p>{user.ccNum}</p>
+          </div>
+        </div>
       </section>
       <section className="order-summary">
-        <h3 className='summary-header'>Order Summary</h3>
-        <div>{lineItems}</div>
-        <h3>{newTotal}</h3>
-        {cartContents.length && <button onClick={() => processOrder()}>PAY NOW</button>}
+        <div className='cart-content'>
+        <h2 className='sub-head'>CART</h2>
+          <h3 className='summary-header'>Order Summary</h3>
+          {getOrderDisplay()}
+          {cartContents.length && <button onClick={() => processOrder()}>PAY NOW</button>}
+        </div>
       </section>
     </div>
   )
