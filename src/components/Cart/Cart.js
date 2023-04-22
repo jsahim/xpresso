@@ -16,7 +16,7 @@ function Cart({cartContents, addOrder, removeItem, user}){
       style: 'currency',
       currency: 'USD',
     })
-    return <div key={Date.now()} className='line-items'>
+    return <div className='line-items'>
             <p>{amount}</p>
             <p>{name}</p>
             <p>{size}</p>
