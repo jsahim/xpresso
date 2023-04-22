@@ -31,6 +31,7 @@ function App() {
       ]);
       const fetchedHotCoffees = await hotResponse.json()
       const fetchedIcedCoffees = await coldResponse.json()
+      console.log(fetchedIcedCoffees)
       const allCleanedDrinks = cleanDrinkData(fetchedHotCoffees, fetchedIcedCoffees)
       setCoffeeDrinks(allCleanedDrinks)
     } catch(err) {

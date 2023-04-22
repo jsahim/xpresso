@@ -9,7 +9,7 @@ function Navigation(){
       <NavLink to="/home"><li>HOME</li></NavLink>
       <NavLink to="/menu"><li>MENU</li></NavLink>
       <Link to="/home"><li>LOGO</li></Link>
-      <NavLink to="/profile"><li>PROFILE</li></NavLink>
+      {/* <NavLink to="/profile"><li><span className="material-symbols-outlined">account_circle</span></li></NavLink> */}
       <NavLink to="/checkout"><li>CART</li></NavLink>
     </ul>
   </nav>

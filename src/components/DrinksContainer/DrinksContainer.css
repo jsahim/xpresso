@@ -6,3 +6,7 @@
   height: 80vh;
   overflow: auto;
 }
+
+.loading {
+  width: 20%;
+}
