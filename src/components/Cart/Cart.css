@@ -11,11 +11,11 @@
 }
 
 .delivery-payment{
-  background-color: aliceblue;
   width: 50%;
 }
 
 .order-summary {
+  background-color: white;
   text-align: end;
   width: 50%;
 }
@@ -24,16 +24,30 @@
   text-align: start;
 }
 
+.conf-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  z-index: 1;
+}
+
 .conf-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: black solid 2px;
+  border-radius: 5px;
   text-align: center;
-  background-color: gray;
+  background-color: #ffcc33;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
+  width: 50%;
   height: 50%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .delivery {
@@ -42,6 +56,29 @@
 
 .cart-content {
   margin: 10%;
+}
+
+.remove-btn {
+  all: unset;
+}
+
+.continue-btn, .pay-now {
+  font-family: 'Montserrat';
+  font-size: large;
+  color: white;
+  background-color: #31343a;
+  border: black solid 2px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.continue-btn:hover, .pay-now:hover {
+  font-family: 'Montserrat';
+  font-size: large;
+  color: black;
+  background-color: white;
+  border: black solid 2px;
+  border-radius: 5px;
 }
 
 .total-details {
@@ -58,4 +95,8 @@
 .sub-head {
   font-family: 'Permanent Marker', cursive;
   text-align: left;
+}
+
+.cart-content .material-symbols-outlined {
+  font-size: 30px;
 }

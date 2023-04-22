@@ -1,5 +1,6 @@
 .drink-card {
   font-family: 'Montserrat';
+  position: relative;
   color: white;
   border-radius: 1%;
   border: 3px #31343a solid;
@@ -25,4 +26,34 @@
 
 .drink-description {
   font-size: small;
+}
+
+.drink-card button, select {
+  background-color: #31343a;
+  border: 2px white solid;
+  color: white;
+  font-family: 'Montserrat';
+  font-size: larger;
+  border-radius: 5px;
+}
+
+.drink-card button {
+  background-color: #ffcc33;
+  color: black;
+  border: 2px white solid;
+  transition: 0.2s;
+}
+
+.drink-card button:hover {
+  background-color: white;
+}
+
+.choose-size {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5%;
 }

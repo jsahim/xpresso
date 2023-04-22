@@ -27,12 +27,29 @@ main {
 }
 
 footer {
+  font-family: 'Montserrat';
+  border-top: 2px solid #ffcc33;
   color: white;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   height: 5%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
   background-color: #31343a;
+}
+
+.checkout {
+  font-family: 'Montserrat';
+  font-size: large;
+  background-color: #ffcc33;
+  color: black;
+  border: 2px white solid;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.checkout:hover {
+  background-color: white;
+  border: 2px white solid;
 }

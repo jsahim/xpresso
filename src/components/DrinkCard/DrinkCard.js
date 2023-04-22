@@ -26,13 +26,13 @@ function DrinkCard({image, name, id, description, ingredients, oneSize, small, m
 
   const getPrice = () => {
     if(sizeSelect === "oneSize"){
-      return oneSize
+      return ` - $${oneSize}`
     } else if (sizeSelect === "small"){
-      return small
+      return ` - $${small}`
     } else if (sizeSelect === "medium"){
-      return medium
+      return ` - $${medium}`
     } else if (sizeSelect === "large"){
-      return large
+      return ` - $${large}`
     } else {
       return null
     }
@@ -47,13 +47,13 @@ function DrinkCard({image, name, id, description, ingredients, oneSize, small, m
         <p className='drink-description'>{description}</p>
         <form className='choose-size'>
           <select value={sizeSelect} onChange={e => setSizeSelect(e.target.value)} required>
-            <option value="" disabled>Select a size</option>
+            <option value="" disabled>Select a Size</option>
             {getSizeOptions()}
           </select>
           <button onClick={e => {
             sendToCart(e, sizeSelect)
             setSizeSelect('')
-          }}>+{getPrice()}</button>
+          }}>Add to Cart{getPrice()}</button>
         </form>
       </div>
     </div>

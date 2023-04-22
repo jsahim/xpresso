@@ -31,7 +31,6 @@ function App() {
       ]);
       const fetchedHotCoffees = await hotResponse.json()
       const fetchedIcedCoffees = await coldResponse.json()
-      console.log(fetchedIcedCoffees)
       const allCleanedDrinks = cleanDrinkData(fetchedHotCoffees, fetchedIcedCoffees)
       setCoffeeDrinks(allCleanedDrinks)
     } catch(err) {
@@ -43,7 +42,7 @@ function App() {
     if(drinksInCart.length && location.pathname !== "/checkout"){
       return <footer>
               <p>There are {drinksInCart.length} item(s) in your cart.</p>
-              <NavLink to="/checkout"><button>CHECKOUT</button></NavLink>
+              <NavLink to="/checkout"><button className='checkout'>Checkout</button></NavLink>
             </footer>
     }
   } 
@@ -84,7 +83,7 @@ function App() {
   return (
     <div className="app">
       <header>
-        <Navigation />
+        <Navigation cartContents={drinksInCart}/>
       </header>
       <main>
       {error && <h3>Sorry, there was an error because: {error}.</h3>}
