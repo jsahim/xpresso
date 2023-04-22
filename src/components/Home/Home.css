@@ -1,5 +1,6 @@
 .home {
   height: inherit;
+  background-color: #ffcc33;
 }
 
 .display-banner{
@@ -15,6 +16,7 @@
 .orders-container{
   height: 38%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row-reverse;
   justify-content: center;
   overflow: auto;

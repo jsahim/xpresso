@@ -53,9 +53,9 @@ footer > div {
 .checkout {
   font-family: 'Montserrat';
   font-size: large;
-  background-color: #31343a;
-  color: white;
-  border: 2px black solid;
+  background-color: #ffcc33;
+  color: black;
+  border: 2px white solid;
   border-radius: 5px;
   transition: 0.2s;
 }
@@ -66,6 +66,7 @@ footer > div {
 }
 
 .message-container {
+  color: white;
   border-top: 3px solid white;
-  background-color: #ffcc33;
+  background-color: #31343a;
 }
