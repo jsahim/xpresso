@@ -6,12 +6,12 @@
   align-items: center;
 }
 
-.account-details {
-  width: 30%;
+.profile > h2 {
+  font-family: 'Permanent Marker', cursive;
 }
 
-.account-details h3 {
-  text-decoration: underline;
+.account-details {
+  width: 30%;
 }
 
 .account-details p {

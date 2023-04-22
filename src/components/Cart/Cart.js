@@ -65,8 +65,9 @@ function Cart({cartContents, addOrder, removeItem, user}){
         </div>}
       <section className="delivery-payment">
         <div className='cart-content delivery-details'>
+          <h2 className='sub-head'>DELIVERY</h2>
           <div className='delivery'>
-            <h3>Delivery</h3>
+            <h3>Address</h3>
             <p>{user.firstName} {user.lastName}</p>
             <p>{user.street}</p>
             <p>{user.city}, {user.state} {user.zip}</p>
@@ -81,6 +82,7 @@ function Cart({cartContents, addOrder, removeItem, user}){
       </section>
       <section className="order-summary">
         <div className='cart-content'>
+        <h2 className='sub-head'>CART</h2>
           <h3 className='summary-header'>Order Summary</h3>
           {getOrderDisplay()}
           {cartContents.length && <button onClick={() => processOrder()}>PAY NOW</button>}

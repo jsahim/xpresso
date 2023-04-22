@@ -15,12 +15,6 @@
   width: 50%;
 }
 
-.delivery-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .order-summary {
   text-align: end;
   width: 50%;
@@ -41,6 +35,10 @@
   z-index: 1;
 }
 
+.delivery {
+  margin-bottom: 10%;
+}
+
 .cart-content {
   margin: 10%;
 }
@@ -54,4 +52,9 @@
 
 .total-details h3 {
   font-size: x-large;
+}
+
+.sub-head {
+  font-family: 'Permanent Marker', cursive;
+  text-align: left;
 }

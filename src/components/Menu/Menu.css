@@ -21,6 +21,7 @@
 .menu-options li {
   margin-top: 15%;
   margin-bottom: 15%;
+  transition: 0.2s;
 }
 
 .menubar a {
@@ -28,7 +29,7 @@
 }
 
 .menubar a:hover li {
-  color: black;
+  background-color: white;
 }
 
 .menubar a.active li {

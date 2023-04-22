@@ -17,6 +17,7 @@ nav li {
   font-family: 'Permanent Marker', cursive;
   color: #ffcc33;
   font-size: xx-large;
+  transition: 0.2s;
 }
 
 .navbar a {
