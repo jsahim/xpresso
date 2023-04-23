@@ -45,7 +45,7 @@ function DrinkCard({image, name, id, description, ingredients, oneSize, small, m
       <img src={image} alt={name}/>
       <div className='drink-details'>
         <h2>{name}</h2>
-        <p>► {ingredients}</p>
+        <p className='ingredients'>► {ingredients}</p>
         <p className='drink-description'>{description}</p>
         <form className='choose-size'>
           <select value={sizeSelect} onChange={e => setSizeSelect(e.target.value)} required>
