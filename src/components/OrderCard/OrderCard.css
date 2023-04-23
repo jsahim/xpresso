@@ -31,3 +31,16 @@
   background: #888;
   border-radius: 15px; 
 }
+
+@media (max-width: 600px){
+  .order-card{
+    width: 80vmin;
+    height: 80vmin;
+    min-height: 200px;
+    margin-bottom: 5%;
+  }
+  .order-content {
+    margin: 0%;
+    margin-left: 5%;
+  }
+}

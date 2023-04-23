@@ -70,3 +70,13 @@ footer > div {
   border-top: 3px solid white;
   background-color: #31343a;
 }
+
+@media (max-width: 600px){
+  .checkout{
+    height: 40px;
+  }
+  .message-container {
+    padding-left: 5%;
+    padding-right: 5%; 
+  }
+}

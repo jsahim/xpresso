@@ -31,3 +31,4 @@ export default Home;
 Home.propTypes = {
   orders: PropTypes.array.isRequired,
 };
+

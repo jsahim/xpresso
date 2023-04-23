@@ -30,7 +30,7 @@
   background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   width: 100%;
-  height: 90%;
+  height: 100%;
   z-index: 2;
 }
 
@@ -76,15 +76,24 @@
   color: #ffcc33;
 }
 
-.continue-btn, .pay-now {
+.continue-btn , .pay-now{
   font-family: 'Montserrat';
   font-size: large;
-  color: white;
-  background-color: #31343a;
-  border: black solid 2px;
   border-radius: 5px;
   transition: 0.2s;
   cursor: pointer;
+}
+
+.pay-now{
+  color: black;
+  background-color: #ffcc33;
+  border: black solid 2px;
+}
+
+.continue-btn{
+  color: white;
+  background-color: #31343a;
+  border: black solid 2px;
 }
 
 .continue-btn:hover {
@@ -93,8 +102,8 @@
 }
 
 .pay-now:hover {
-  color: black;
-  background-color: #ffcc33;
+  color: white;
+  background-color: black;
 }
 
 .total-details {
@@ -110,9 +119,47 @@
 
 .sub-head {
   font-family: 'Permanent Marker', cursive;
+  font-size: x-large;
   text-align: left;
+  margin: 5% 0 0 9%;
 }
 
 .cart-content .material-symbols-outlined {
   font-size: 30px;
+}
+
+@media (max-width: 600px){
+  .cart {
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse
+  }
+  .order-summary, .delivery-payment{
+    border-top: black solid 2px;
+    height: 50%;
+    width: 100%;
+  }
+  .delivery {
+    height: 50%;
+    margin: 0 5% 0 5%;
+    font-size: medium;
+  }
+  .cart-content, .delivery-details{
+    margin: 0%;
+  }
+  .cart-content {
+    margin: 5%;
+    overflow: auto;
+  }
+  .delivery-details{
+    display: flex;
+    margin-bottom: 115px;
+  }
+  .sub-head {
+    margin-left: 5%;
+  }
+  .conf-screen{
+    width: 80%;
+    height: 30%;
+  }
 }
