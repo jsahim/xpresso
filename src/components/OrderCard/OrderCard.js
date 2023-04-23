@@ -1,4 +1,5 @@
 import './OrderCard.css'
+import PropTypes from 'prop-types';
 
 function OrderCard({conf, lineItems, total, payment, timeStamp}){
   const orderNum = conf.toString()
@@ -21,3 +22,11 @@ function OrderCard({conf, lineItems, total, payment, timeStamp}){
 }
 
 export default OrderCard;
+
+OrderCard.propTypes = {
+  conf: PropTypes.string.isRequired,
+  lineItems: PropTypes.array.isRequired,
+  total: PropTypes.number.isRequired,
+  payment: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
+};

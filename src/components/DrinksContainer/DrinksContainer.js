@@ -1,4 +1,5 @@
 import './DrinksContainer.css';
+import PropTypes from 'prop-types';
 import DrinkCard from '../DrinkCard/DrinkCard'
 
 function DrinksContainer({drinks, matchType, addToCart}){
@@ -15,6 +16,7 @@ function DrinksContainer({drinks, matchType, addToCart}){
   const chosenDrinks = filteredDrinks.map(drink => {
     return (
       <DrinkCard 
+        key={Math.random()}
         id={drink.id}
         name={drink.name}
         description={drink.description}
@@ -32,10 +34,16 @@ function DrinksContainer({drinks, matchType, addToCart}){
 
   return (
     <div className='drinks-container'>
-      {!chosenDrinks.length && <img src="https://intelligence.businesseventsthailand.com/files/site_loader/site_loader_image5.gif" className='loading'/>}
+      {!chosenDrinks.length && <img src="https://intelligence.businesseventsthailand.com/files/site_loader/site_loader_image5.gif" className='loading' alt="loading cup"/>}
       {chosenDrinks}
     </div>
   );
 }
 
 export default DrinksContainer;
+
+DrinksContainer.propTypes = {
+  drinks: PropTypes.array.isRequired,
+  matchType: PropTypes.string.isRequired,
+  addToCart: PropTypes.func.isRequired
+};

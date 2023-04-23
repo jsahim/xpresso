@@ -1,4 +1,5 @@
 import './Navigation.css'
+import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 
 function Navigation({cartContents}){
@@ -28,3 +29,7 @@ function Navigation({cartContents}){
 }
 
 export default Navigation;
+
+Navigation.propTypes = {
+  cartContents: PropTypes.array.isRequired,
+};

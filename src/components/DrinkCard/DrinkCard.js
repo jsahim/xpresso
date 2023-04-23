@@ -1,5 +1,7 @@
 import './DrinkCard.css'
 import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 
 function DrinkCard({image, name, id, description, ingredients, oneSize, small, medium, large, addToCart}){
 
@@ -61,3 +63,16 @@ function DrinkCard({image, name, id, description, ingredients, oneSize, small, m
 }
 
 export default DrinkCard;
+
+DrinkCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  ingredients: PropTypes.string.isRequired,
+  addToCart: PropTypes.func.isRequired,
+  oneSize: PropTypes.any,
+  small: PropTypes.any,
+  medium: PropTypes.any,
+  large: PropTypes.any
+};

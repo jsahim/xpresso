@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom'
 
 import './Cart.css'
@@ -16,12 +17,14 @@ function Cart({cartContents, addOrder, removeItem, user}){
       style: 'currency',
       currency: 'USD',
     })
-    return <div className='line-items'>
+    return <div key={Math.random()} className='line-items'>
             <p>{amount}</p>
             <p>{name}</p>
             <p>{size}</p>
             <p>{newPrice}</p>
-            <button className="remove-btn" onClick={(e)=> removeItem(drinkCode)}><span className="material-symbols-outlined">cancel</span></button>
+            <button className="remove-btn" onClick={(e)=> removeItem(drinkCode)}>
+              <span className="material-symbols-outlined remove-icon">cancel</span>
+            </button>
           </div>
   })
 
@@ -41,12 +44,12 @@ function Cart({cartContents, addOrder, removeItem, user}){
       return <p>Your Cart is Empty!</p>
     } else {
       return <>
-          {lineItems}
-          <div className='total-details'>
-            <p>TOTAL:</p>
-            <h3>{newTotal}</h3>
-          </div>
-          </>
+              {lineItems}
+              <div className='total-details'>
+                <p>TOTAL:</p>
+                <h3>{newTotal}</h3>
+              </div>
+            </>
     }
   }
 
@@ -95,3 +98,10 @@ function Cart({cartContents, addOrder, removeItem, user}){
 }
 
 export default Cart;
+
+Cart.propTypes = {
+  cartContents: PropTypes.array.isRequired,
+  addOrder: PropTypes.func.isRequired,
+  removeItem: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired
+};

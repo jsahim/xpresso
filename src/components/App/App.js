@@ -62,7 +62,7 @@ function App() {
   }
 
   const removeFromCart = (code) => {
-    const filteredDrinks = drinksInCart.filter(drink => drink.itemCode != code)
+    const filteredDrinks = drinksInCart.filter(drink => drink.itemCode !== code)
     setDrinksInCart(filteredDrinks)
   }
 
