@@ -14,8 +14,8 @@ header {
 }
 
 main {
+  height: inherit;
   margin-top: 100px;
-  height: 100%;
   background-color: gainsboro;
 }
 

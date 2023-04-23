@@ -18,6 +18,8 @@
   background-color: white;
   text-align: end;
   width: 50%;
+  overflow: auto;
+  padding-bottom: 100px;
 }
 
 .summary-header {
@@ -39,6 +41,7 @@
   align-items: center;
   border: black solid 2px;
   border-radius: 5px;
+  font-size: large;
   text-align: center;
   background-color: #ffcc33;
   position: absolute;
@@ -52,10 +55,12 @@
 
 .delivery {
   margin-bottom: 10%;
+  font-size: large;
 }
 
 .cart-content {
   margin: 10%;
+  font-size: large;
 }
 
 .remove-btn {
