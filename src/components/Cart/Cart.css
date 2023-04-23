@@ -121,10 +121,12 @@
 
 @media (max-width: 600px){
   .cart {
+    height: 100%;
     display: flex;
     flex-direction: column-reverse
   }
   .order-summary, .delivery-payment{
+    height: 50%;
     width: 100%;
   }
   .delivery {
@@ -136,13 +138,12 @@
     margin: 0%;
   }
   .cart-content {
-    margin: 5%
+    margin: 5%;
+    overflow: auto;
   }
   .delivery-details{
     display: flex;
-  }
-  .delivery-payment{
-    height: 900px;
+    margin-bottom: 115px;
   }
   .sub-head {
     margin-left: 5%;

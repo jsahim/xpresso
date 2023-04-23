@@ -31,3 +31,10 @@
   background: #888;
   border-radius: 15px; 
 }
+
+@media (max-width: 600px){
+  .order-card{
+    width: 40vmin;
+    height: 28vmin;
+  }
+}
