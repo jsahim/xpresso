@@ -54,3 +54,6 @@ nav li {
   transform: translateX(-26px);
   color: black;
 }
+
+@media (max-width: 600px){
+}
