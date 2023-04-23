@@ -22,7 +22,9 @@ function Cart({cartContents, addOrder, removeItem, user}){
             <p>{name}</p>
             <p>{size}</p>
             <p>{newPrice}</p>
-            <button className="remove-btn" onClick={(e)=> removeItem(drinkCode)}><span className="material-symbols-outlined">cancel</span></button>
+            <button className="remove-btn" onClick={(e)=> removeItem(drinkCode)}>
+              <span className="material-symbols-outlined remove-icon">cancel</span>
+            </button>
           </div>
   })
 

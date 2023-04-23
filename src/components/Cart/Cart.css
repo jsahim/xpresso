@@ -65,6 +65,15 @@
 
 .remove-btn {
   all: unset;
+  cursor: pointer;
+}
+
+.remove-icon {
+  transition: 0.2s;
+}
+
+.remove-icon:hover {
+  color: #ffcc33;
 }
 
 .continue-btn, .pay-now {
@@ -75,6 +84,7 @@
   border: black solid 2px;
   border-radius: 5px;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .continue-btn:hover {

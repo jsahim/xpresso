@@ -47,6 +47,7 @@
 
 .drink-card button:hover {
   background-color: white;
+  cursor: pointer;
 }
 
 .choose-size {
