@@ -18,20 +18,13 @@ body > div {
   'opsz' 48
 }
 
-/* 
-@media (max-width: 850px){
+
+@media (max-width: 600px){
   .display-banner{
     display: none;
   }
-  .menu{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  .menu-options {
-    width: 100%;
-  }
   .drink-card{
+    overflow-y: hidden;
     width: 100%;
   }
-} */
+}
