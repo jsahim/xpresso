@@ -31,7 +31,18 @@
 }
 
 @media (max-width: 600px){
+  .home {
+    overflow: auto;
+  }
   .display-banner{
     display: none;
+  }
+  .orders-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
