@@ -30,7 +30,7 @@
   background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   width: 100%;
-  height: 90%;
+  height: 100%;
   z-index: 2;
 }
 
@@ -110,9 +110,45 @@
 
 .sub-head {
   font-family: 'Permanent Marker', cursive;
+  font-size: x-large;
   text-align: left;
+  margin: 5% 0 0 9%;
 }
 
 .cart-content .material-symbols-outlined {
   font-size: 30px;
+}
+
+@media (max-width: 600px){
+  .cart {
+    display: flex;
+    flex-direction: column-reverse
+  }
+  .order-summary, .delivery-payment{
+    width: 100%;
+  }
+  .delivery {
+    height: 50%;
+    margin: 0 5% 0 5%;
+    font-size: medium;
+  }
+  .cart-content, .delivery-details{
+    margin: 0%;
+  }
+  .cart-content {
+    margin: 5%
+  }
+  .delivery-details{
+    display: flex;
+  }
+  .delivery-payment{
+    height: 900px;
+  }
+  .sub-head {
+    margin-left: 5%;
+  }
+  .conf-screen{
+    width: 80%;
+    height: 30%;
+  }
 }
