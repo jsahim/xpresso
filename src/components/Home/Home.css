@@ -29,3 +29,9 @@
 .no-orders {
   font-family: 'Montserrat';
 }
+
+@media (max-width: 600px){
+  .display-banner{
+    display: none;
+  }
+}

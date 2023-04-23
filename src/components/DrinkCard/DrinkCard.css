@@ -59,3 +59,10 @@
   bottom: 0;
   margin-bottom: 5%;
 }
+
+@media (max-width: 600px){
+  .drink-card{
+    overflow-y: hidden;
+    width: 100%;
+  }
+}

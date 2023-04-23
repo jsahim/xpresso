@@ -25,6 +25,9 @@ body > div {
   }
   .drink-card{
     overflow-y: hidden;
+    width: 100px;
+  }
+  .type-container{
     width: 100%;
   }
 }

@@ -10,3 +10,10 @@
 .loading {
   width: 20%;
 }
+
+
+@media (max-width: 600px){
+  .type-container{
+    width: 100%;
+  }
+}
