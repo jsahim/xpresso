@@ -70,9 +70,9 @@ DrinkCard.propTypes = {
   id: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   ingredients: PropTypes.string.isRequired,
-  oneSize: PropTypes.any.isRequired,
-  small: PropTypes.any.isRequired,
-  medium: PropTypes.any.isRequired,
-  large: PropTypes.any.isRequired,
-  addToCart: PropTypes.func.isRequired
+  addToCart: PropTypes.func.isRequired,
+  oneSize: PropTypes.any,
+  small: PropTypes.any,
+  medium: PropTypes.any,
+  large: PropTypes.any
 };
