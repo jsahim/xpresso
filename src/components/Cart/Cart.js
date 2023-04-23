@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom'
 
 import './Cart.css'
@@ -16,7 +17,7 @@ function Cart({cartContents, addOrder, removeItem, user}){
       style: 'currency',
       currency: 'USD',
     })
-    return <div className='line-items'>
+    return <div key={Math.random()} className='line-items'>
             <p>{amount}</p>
             <p>{name}</p>
             <p>{size}</p>
@@ -95,3 +96,10 @@ function Cart({cartContents, addOrder, removeItem, user}){
 }
 
 export default Cart;
+
+Cart.propTypes = {
+  cartContents: PropTypes.array.isRequired,
+  addOrder: PropTypes.func.isRequired,
+  removeItem: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired
+};

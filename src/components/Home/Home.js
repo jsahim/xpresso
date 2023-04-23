@@ -1,9 +1,11 @@
 import OrderCard from '../OrderCard/OrderCard';
+import PropTypes from 'prop-types';
 import './Home.css'
 
 function Home({orders}){
   const allOrders = orders.map(order => {
-  return <OrderCard 
+  return <OrderCard
+          key={Math.random()} 
           conf={order.orderCode} 
           lineItems={order.lineItems} 
           payment={order.payment} 
@@ -24,3 +26,8 @@ function Home({orders}){
 }
 
 export default Home;
+
+
+Home.propTypes = {
+  orders: PropTypes.array.isRequired,
+};

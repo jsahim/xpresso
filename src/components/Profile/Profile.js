@@ -1,4 +1,6 @@
 import './Profile.css'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Profile({user}){
   return (<div className='profile'>
@@ -28,3 +30,7 @@ function Profile({user}){
 }
 
 export default Profile;
+
+Profile.propTypes = {
+  user: PropTypes.object.isRequired
+};

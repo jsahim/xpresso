@@ -1,4 +1,5 @@
 import './Menu.css'
+import PropTypes from 'prop-types';
 import { NavLink, Switch, Route, Redirect } from 'react-router-dom';
 import DrinksContainer from '../DrinksContainer/DrinksContainer';
 
@@ -30,3 +31,8 @@ function Menu({drinks, addToCart}){
 }
 
 export default Menu;
+
+Menu.propTypes = {
+  drinks: PropTypes.array.isRequired,
+  addToCart: PropTypes.func.isRequired,
+};
