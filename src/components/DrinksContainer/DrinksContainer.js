@@ -16,8 +16,8 @@ function DrinksContainer({drinks, matchType, addToCart}){
   const chosenDrinks = filteredDrinks.map(drink => {
     return (
       <DrinkCard 
-        id={drink.id}
         key={Math.random()}
+        id={drink.id}
         name={drink.name}
         description={drink.description}
         ingredients={drink.ingredients}

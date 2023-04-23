@@ -42,12 +42,12 @@ function Cart({cartContents, addOrder, removeItem, user}){
       return <p>Your Cart is Empty!</p>
     } else {
       return <>
-          {lineItems}
-          <div className='total-details'>
-            <p>TOTAL:</p>
-            <h3>{newTotal}</h3>
-          </div>
-          </>
+              {lineItems}
+              <div className='total-details'>
+                <p>TOTAL:</p>
+                <h3>{newTotal}</h3>
+              </div>
+            </>
     }
   }
 
