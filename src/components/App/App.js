@@ -48,7 +48,7 @@ function App() {
   } 
 
   const addToCart = (id, size) => {
-    const locatedDrink = coffeeDrinks.find(drink => drink.id == id)
+    const locatedDrink = coffeeDrinks.find(drink => drink.id === id)
     const itemCode = Date.now().toString() + "I"
     const formattedDrink = {
       itemCode: itemCode,
