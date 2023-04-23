@@ -1,17 +1,17 @@
-describe("Home Page", () => {
+describe('Home Page', () => {
   beforeEach(() => {
-    cy.intercept("GET", "https://api.sampleapis.com/coffee/hot", {
+    cy.intercept('GET', 'https://api.sampleapis.com/coffee/hot', {
       statusCode: 200,
-      fixture: "hotDrinks.json"
+      fixture: 'hotDrinks.json'
     })
-    cy.intercept("GET", "https://api.sampleapis.com/coffee/iced", {
+    cy.intercept('GET', 'https://api.sampleapis.com/coffee/iced', {
       statusCode: 200,
-      fixture: "icedDrinks.json"
+      fixture: 'icedDrinks.json'
     })
-    cy.visit("https://xpresso-coffee.vercel.app")
+    cy.visit('https://xpresso-coffee.vercel.app')
   })
   it('should have header navigation with a logo, home button, menu button, user icon and shopping bag icon', () => {
-    cy.get('img').eq(0).should('have.attr', "src").should("equal", 'https://user-images.githubusercontent.com/107663888/233799142-9fdde281-3a5f-4e0b-8b7f-9873273069c1.png')
+    cy.get('img').eq(0).should('have.attr', 'src').should('equal', 'https://user-images.githubusercontent.com/107663888/233799142-9fdde281-3a5f-4e0b-8b7f-9873273069c1.png')
     cy.get('.navbar > .active > li').eq(0).contains('HOME')
     cy.get('li').eq(1).contains('MENU')
     cy.get('li').eq(2).contains('account_circle')
