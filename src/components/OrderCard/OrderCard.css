@@ -1,11 +1,11 @@
 .order-card {
   font-family: 'Montserrat';
   color: white;
-  border-radius: 15px;
-  border: 3px #31343a solid;
+  border-radius: 10px;
+  border: 2px black solid;
   background-color: #31343a;
-  width: 30vmin;
-  height: 30vmin;
+  width: 40vmin;
+  height: 28vmin;
   margin: 2vmin;
   overflow: auto;
 }
@@ -16,4 +16,18 @@
 
 .order-content .line-items p {
   margin: 1%;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 15px; 
 }

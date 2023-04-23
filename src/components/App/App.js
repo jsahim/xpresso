@@ -40,10 +40,10 @@ function App() {
 
   const displayCartMessage = () => {
     if(drinksInCart.length && location.pathname !== "/checkout"){
-      return <footer>
+      return <div className='message-container'>
               <p>There are {drinksInCart.length} item(s) in your cart.</p>
-              <NavLink to="/checkout"><button>CHECKOUT</button></NavLink>
-            </footer>
+              <NavLink to="/checkout"><button className='checkout'>Checkout</button></NavLink>
+            </div>
     }
   } 
 
@@ -68,7 +68,6 @@ function App() {
 
   const addOrder = (code, lineItems, total, user) => {
     const timeStamp = new Date().toString()
-    console.log(user)
     const payment = `${user.ccType.toUpperCase()} -${user.ccNum.slice(-4)}`
     const newOrder = {
       orderCode: code,
@@ -84,7 +83,7 @@ function App() {
   return (
     <div className="app">
       <header>
-        <Navigation />
+        <Navigation cartContents={drinksInCart}/>
       </header>
       <main>
       {error && <h3>Sorry, there was an error because: {error}.</h3>}
@@ -96,7 +95,9 @@ function App() {
           <Redirect from="/" to="/home"/>
         </Switch>
       </main>
-          {displayCartMessage()}
+        <footer>
+        {displayCartMessage()}
+        </footer>
     </div>
   );
 }

@@ -21,7 +21,7 @@ function Cart({cartContents, addOrder, removeItem, user}){
             <p>{name}</p>
             <p>{size}</p>
             <p>{newPrice}</p>
-            <button onClick={(e)=> removeItem(drinkCode)}>X</button>
+            <button className="remove-btn" onClick={(e)=> removeItem(drinkCode)}><span className="material-symbols-outlined">cancel</span></button>
           </div>
   })
 
@@ -58,10 +58,12 @@ function Cart({cartContents, addOrder, removeItem, user}){
 
   return (
     <div className='cart'>
-      {paymentProcessing && <div className='conf-screen'>
-        <p>THANK YOU FOR YOUR ORDER!</p>
-        <p>Please click the "continue" button to view your order details.</p>
-        <NavLink to="/home"><button onClick={()=> setPaymentProcessing(false)}>CONTINUE</button></NavLink>
+      {paymentProcessing && <div className='conf-overlay'>
+          <div className='conf-screen'>
+          <p>THANK YOU FOR YOUR ORDER!</p>
+          <p>Please click the "continue" button to view your order details.</p>
+          <NavLink to="/home"><button className='continue-btn' onClick={()=> setPaymentProcessing(false)}>CONTINUE</button></NavLink>
+          </div>
         </div>}
       <section className="delivery-payment">
         <div className='cart-content delivery-details'>
@@ -85,7 +87,7 @@ function Cart({cartContents, addOrder, removeItem, user}){
         <h2 className='sub-head'>CART</h2>
           <h3 className='summary-header'>Order Summary</h3>
           {getOrderDisplay()}
-          {cartContents.length && <button onClick={() => processOrder()}>PAY NOW</button>}
+          {cartContents.length && <button className='pay-now' onClick={() => processOrder()}>PAY NOW</button>}
         </div>
       </section>
     </div>

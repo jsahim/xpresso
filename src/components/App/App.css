@@ -1,17 +1,21 @@
 .app {
-  height: 100vh;
+  height: inherit;
   display: flex;
   flex-direction: column;
 }
 
 header {
-  height: 10%;
+  position: fixed;
+  height: 100px;
+  width: 100%;
   background-color: #31343a;
   border-bottom: 3px white solid;
+  z-index: 1;
 }
 
 main {
-  min-height: 80%;
+  margin-top: 100px;
+  height: 100%;
   background-color: gainsboro;
 }
 
@@ -27,12 +31,42 @@ main {
 }
 
 footer {
-  color: white;
-  letter-spacing: 3px;
-  height: 5%;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  bottom: 0;
+}
+
+footer > div {
+  height: 60px;
+  font-family: 'Montserrat';
+  border-top: 3px solid #ffcc33;
+  color: black;
+  letter-spacing: 2px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  background-color: #31343a;
+}
+
+.checkout {
+  font-family: 'Montserrat';
+  font-size: large;
+  background-color: #ffcc33;
+  color: black;
+  border: 2px white solid;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.checkout:hover {
+  color: black;
+  background-color: white;
+}
+
+.message-container {
+  color: white;
+  border-top: 3px solid white;
   background-color: #31343a;
 }

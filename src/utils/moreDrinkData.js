@@ -36,7 +36,7 @@ const moreDrinkData =
       medium: null,
       large: null
     },{
-      name: "Doppio",
+      name: "Doppioo",
       image: "https://lianaskitchen.co.uk/wp-content/uploads/Doppio-720x540.jpg",
       oneSize: 4.65,
       small: null,
