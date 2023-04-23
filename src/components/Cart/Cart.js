@@ -61,7 +61,7 @@ function Cart({cartContents, addOrder, removeItem, user}){
       {paymentProcessing && <div className='conf-overlay'>
           <div className='conf-screen'>
           <p>THANK YOU FOR YOUR ORDER!</p>
-          <p>Please click the "continue" button to view your order details.</p>
+          <p>Please click the <b><em>continue</em></b> button to view your order details.</p>
           <NavLink to="/home"><button className='continue-btn' onClick={()=> setPaymentProcessing(false)}>CONTINUE</button></NavLink>
           </div>
         </div>}
