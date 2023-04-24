@@ -57,10 +57,11 @@ nav li {
 
 @media (max-width: 600px){
   nav img {
+    width: 100%;
     position: absolute;
     z-index: 4;
-    transform: translateX(-210px);
-    margin-top: 5%;
+    transform: translateX(-250px);
+    margin-top: 2%;
     top: 0;
   }
   nav > ul {
