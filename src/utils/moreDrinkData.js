@@ -182,7 +182,14 @@ const moreDrinkData =
       small: 5.75,
       medium: 6.35,
       large: 7.15
-    },
+    },{
+      name: "default",
+      image: "https://user-images.githubusercontent.com/107663888/233879451-0c13275d-3782-4b94-b5db-240b2a5c1413.png",
+      oneSize: null,
+      small: 4.75,
+      medium: 5.75,
+      large: 6.75
+    }
   ]
 
   export default moreDrinkData
