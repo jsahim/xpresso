@@ -42,11 +42,13 @@
     display: none;
   }
   .orders-container{
-    height: 100%;
+    height: auto;
+    overflow: auto;
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: nowrap;
     justify-content: flex-end;
     align-items: center;
+    margin-bottom: 50%;
   }
 }

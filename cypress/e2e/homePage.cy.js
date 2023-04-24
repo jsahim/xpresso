@@ -19,7 +19,7 @@ describe('Home Page', () => {
   })
   it('should display previous orders', () => {
     cy.get('h2').contains('Previous Orders')
-    cy.get('p').contains('No orders have been placed yet.')
+    cy.get('.no-orders').contains('No orders have been placed yet.')
   })
   it('should be routed to the Menu page when the user clicks the Menu button', () => {
     cy.get('li').eq(1).contains('MENU').click()
