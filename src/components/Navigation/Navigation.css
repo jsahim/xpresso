@@ -56,4 +56,18 @@ nav li {
 }
 
 @media (max-width: 600px){
+  nav img {
+    position: absolute;
+    z-index: 4;
+    transform: translateX(-210px);
+    margin-top: 5%;
+    top: 0;
+  }
+  nav > ul {
+    display: flex;
+    align-items: flex-end;
+  }
+  nav li:nth-child(1), li:nth-child(2)  {
+    margin-bottom: 5%;
+  }
 }

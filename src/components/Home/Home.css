@@ -32,7 +32,11 @@
 
 @media (max-width: 600px){
   .home {
+    margin-top: 12%;
     overflow: auto;
+  }
+  .home h2 {
+    margin-top: 5%;
   }
   .display-banner{
     display: none;

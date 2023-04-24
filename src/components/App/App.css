@@ -75,6 +75,9 @@ footer > div {
   .checkout{
     height: 40px;
   }
+  header {
+    height: 150px
+  }
   .message-container {
     padding-left: 5%;
     padding-right: 5%; 
