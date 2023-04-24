@@ -54,6 +54,12 @@ describe('Menu Page', () => {
     cy.get('.drink-card button').eq(7).contains('Add to Cart - $3.45').click()
     cy.get('.message-container').should('exist').contains('There are 1 item(s) in your cart.')
     cy.get('.checkout').click()
-    cy.url('https://xpresso-coffee.vercel.app/checkout')
+    cy.url().should('eq', 'https://xpresso-coffee.vercel.app/checkout')
+  })
+  it('should also allow the user to click the shopping bag icon in navigation and checkout that way', () => {
+    cy.get('.drink-card select').eq(7).select('Small')
+    cy.get('.drink-card button').eq(7).contains('Add to Cart - $3.45').click()
+    cy.get('li').eq(3).contains('shopping_bag').click({force: true})
+    cy.url().should('eq', 'https://xpresso-coffee.vercel.app/checkout')
   })
 })
