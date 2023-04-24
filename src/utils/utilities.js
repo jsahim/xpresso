@@ -4,33 +4,39 @@ const cleanDrinkData = (hotData, coldData) => {
   let cleanHotData, cleanIcedData
   if(hotData){
     cleanHotData = hotData.map(drink => {
+      let finalHotDrink
       const foundHotDrink = supplementData.find(bev => bev.name === drink.title)
+      const defaultHotDrink = supplementData.find(bev => bev.name === "default")
+      foundHotDrink ? finalHotDrink = foundHotDrink : finalHotDrink = defaultHotDrink
       return {
                 name: drink.title,
                 description: drink.description, 
                 ingredients: drink.ingredients.join(" ⎜ "),
                 type: "hot", 
-                image: foundHotDrink.image,
-                oneSize: foundHotDrink.oneSize,
-                small: foundHotDrink.small,
-                medium: foundHotDrink.medium,
-                large: foundHotDrink.large
+                image: finalHotDrink.image,
+                oneSize: finalHotDrink.oneSize,
+                small: finalHotDrink.small,
+                medium: finalHotDrink.medium,
+                large: finalHotDrink.large
               }
     })
   } 
   if(coldData){
     cleanIcedData = coldData.map(drink => {
-      const foundColdDrink = supplementData.find(bev => bev.name === drink.title)
+      let finalcedDrink
+      const foundIcedDrink = supplementData.find(bev => bev.name === drink.title)
+      const defaultIcedDrink = supplementData.find(bev => bev.name === "default")
+      foundIcedDrink ? finalcedDrink = foundIcedDrink : finalcedDrink = defaultIcedDrink
       return {
                 name: drink.title,
                 description: drink.description, 
                 ingredients: drink.ingredients.join(" ⎜ "),
                 type: "iced", 
-                image: foundColdDrink.image,
-                oneSize: foundColdDrink.oneSize,
-                small: foundColdDrink.small,
-                medium: foundColdDrink.medium,
-                large: foundColdDrink.large
+                image: finalcedDrink.image,
+                oneSize: finalcedDrink.oneSize,
+                small: finalcedDrink.small,
+                medium: finalcedDrink.medium,
+                large: finalcedDrink.large
               }
     })
   }
