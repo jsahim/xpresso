@@ -36,7 +36,7 @@ const moreDrinkData =
       medium: null,
       large: null
     },{
-      name: "Doppioo",
+      name: "Doppio",
       image: "https://lianaskitchen.co.uk/wp-content/uploads/Doppio-720x540.jpg",
       oneSize: 4.65,
       small: null,
@@ -168,7 +168,21 @@ const moreDrinkData =
       small: 5.95,
       medium: 6.45,
       large: 7.25
-    }
+    },{
+      name: "Cortadito",
+      image: "https://user-images.githubusercontent.com/107663888/233876052-0f470ba3-e515-45a7-a532-4bc0cc3622f9.png",
+      oneSize: null,
+      small: 5.35,
+      medium: 6.25,
+      large: 7.55
+    },{
+      name: "Aguapanela Coffee",
+      image: "https://user-images.githubusercontent.com/107663888/233876036-25016146-dc04-475b-a6f1-480246266d7e.png",
+      oneSize: null,
+      small: 5.75,
+      medium: 6.35,
+      large: 7.15
+    },
   ]
 
   export default moreDrinkData
