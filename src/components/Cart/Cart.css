@@ -4,10 +4,9 @@
   display: flex;
 }
 
-.line-items {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+table {
+  width: 100%;
+  text-align: center;
 }
 
 .delivery-payment{
@@ -15,11 +14,15 @@
 }
 
 .order-summary {
+  text-align: left;
   background-color: white;
-  text-align: end;
   width: 50%;
   overflow: auto;
   padding-bottom: 100px;
+}
+
+.total-number {
+  font-size: xx-large;
 }
 
 .summary-header {
@@ -88,6 +91,7 @@
   color: black;
   background-color: #ffcc33;
   border: black solid 2px;
+  float: right;
 }
 
 .continue-btn{
@@ -121,7 +125,6 @@
   font-family: 'Permanent Marker', cursive;
   font-size: x-large;
   text-align: left;
-  margin: 5% 0 0 9%;
 }
 
 .cart-content .material-symbols-outlined {

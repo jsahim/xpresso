@@ -18,6 +18,19 @@
   margin: 1%;
 }
 
+.order-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
+
+.order-items > tr {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 ::-webkit-scrollbar {
   width: 15px;
 }
