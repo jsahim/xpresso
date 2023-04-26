@@ -17,16 +17,18 @@ function Cart({cartContents, addOrder, removeItem, user}){
       style: 'currency',
       currency: 'USD',
     })
-    return <div key={Math.random()} className='line-items'>
-            <p>{amount}</p>
-            <p>{name}</p>
-            <p>{size}</p>
-            <p>{newPrice}</p>
-            <button className="remove-btn" onClick={(e)=> removeItem(drinkCode)}>
-              <span className="material-symbols-outlined remove-icon">cancel</span>
-            </button>
-          </div>
-  })
+    return  <tr key={Math.random()} className='line-items'>
+              <td>{amount}</td>
+              <td>{name}</td>
+              <td>{size}</td>
+              <td>{newPrice}</td>
+              <td>
+                <button className="remove-btn" onClick={()=> removeItem(drinkCode)}>
+                  <span className="material-symbols-outlined remove-icon">cancel</span>
+                </button>
+              </td>
+            </tr>
+            })
 
   const orderTotal = cartContents.reduce((acc, item) => {
     acc += item.price
@@ -43,13 +45,7 @@ function Cart({cartContents, addOrder, removeItem, user}){
     if(!cartContents.length){
       return <p>Your Cart is Empty!</p>
     } else {
-      return <>
-              {lineItems}
-              <div className='total-details'>
-                <p>TOTAL:</p>
-                <h3>{newTotal}</h3>
-              </div>
-            </>
+      return lineItems
     }
   }
 
@@ -87,10 +83,16 @@ function Cart({cartContents, addOrder, removeItem, user}){
       </section>
       <section className="order-summary">
         <div className='cart-content'>
-        <h2 className='sub-head'>CART</h2>
+          <h2 className='sub-head'>CART</h2>
           <h3 className='summary-header'>Order Summary</h3>
-          {getOrderDisplay()}
-          {cartContents.length && <button className='pay-now' onClick={() => processOrder()}>PAY NOW</button>}
+          <table>
+            {getOrderDisplay()}
+          </table>
+          <div className='total-details'>
+            <p>TOTAL:</p>
+            <h2 className='total-number'>{newTotal}</h2>
+          </div>
+          {cartContents.length > 0 && <button className='pay-now' onClick={() => processOrder()}>PAY NOW</button>}
         </div>
       </section>
     </div>

@@ -13,7 +13,7 @@ function OrderCard({conf, lineItems, total, payment, timeStamp}){
       <div className='order-content'>
         <p>ORDER: {orderNum}</p>
         <p>{timeStamp}</p>
-        <div>ITEMS: {lineItems}</div>
+        <div className='order-items'>ITEMS: {lineItems}</div>
         <p>PAYMENT: {payment}</p>
         <p>TOTAL: {newTotal}</p>
       </div>
