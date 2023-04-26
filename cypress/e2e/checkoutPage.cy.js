@@ -26,12 +26,12 @@ describe('Checkout Page', () => {
   it('should display a Cart section on with all drinks added to the cart with a Total and Pay Now button', () => {
     cy.get('.sub-head').eq(1).contains('CART')
     cy.get('h3').eq(2).contains('Order Summary')
-    cy.get('.cart-content').children('.line-items').should('have.length', 3)
+    cy.get('table').children('.line-items').should('have.length', 3)
     cy.get('.line-items').eq(0).contains('Cortado')
     cy.get('.line-items').eq(1).contains('Mocha')
     cy.get('.line-items').eq(2).contains('Flat White')
     cy.get('.total-details > p').contains('TOTAL:')
-    cy.get('.total-details > h3').contains('$12.85')
+    cy.get('.total-details .total-number').contains('$12.85')
     cy.get('.pay-now').contains('PAY NOW')
   })
   it('should show the quantity, name, size, and price of each drink line item', () => {
@@ -43,11 +43,11 @@ describe('Checkout Page', () => {
   it('should be able to remove a specific item with the X button and see the total reflect the change', () => {
     cy.get('.sub-head').eq(1).contains('CART')
     cy.get('h3').eq(2).contains('Order Summary')
-    cy.get('.total-details > h3').contains('$12.85')
-    cy.get('.cart-content').children('.line-items').should('have.length', 3)
+    cy.get('.total-details > .total-number').contains('$12.85')
+    cy.get('table').children('.line-items').should('have.length', 3)
     cy.get('.remove-btn').eq(1).click()
-    cy.get('.total-details > h3').contains('$9.40')
-    cy.get('.cart-content').children('.line-items').should('have.length', 2)
+    cy.get('.total-details > .total-number').contains('$9.40')
+    cy.get('table').children('.line-items').should('have.length', 2)
   })
   it('should let the user click the Pay Now button, give the user and confirmation message then take them back home to view the order details', () => {
     cy.get('.pay-now').contains('PAY NOW').click()
