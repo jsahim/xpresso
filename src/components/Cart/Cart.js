@@ -83,7 +83,7 @@ function Cart({cartContents, addOrder, removeItem, user}){
       </section>
       <section className="order-summary">
         <div className='cart-content'>
-        <h2 className='sub-head'>CART</h2>
+          <h2 className='sub-head'>CART</h2>
           <h3 className='summary-header'>Order Summary</h3>
           <table>
             {getOrderDisplay()}
