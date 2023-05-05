@@ -10,7 +10,7 @@ header {
   width: 100%;
   background-color: #31343a;
   border-bottom: 3px white solid;
-  z-index: 1;
+  z-index: 3;
 }
 
 main {
