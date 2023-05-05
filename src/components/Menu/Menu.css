@@ -63,4 +63,7 @@
   .menubar {
     display: flex;
   }
+  body {
+    overflow-x: hidden;
+  }
 }
