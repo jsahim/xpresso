@@ -11,7 +11,7 @@ const cleanDrinkData = (hotData, coldData) => {
       return {
                 name: drink.title,
                 description: drink.description, 
-                ingredients: drink.ingredients.join(" ⎜ "),
+                ingredients: drink.ingredients.toString().split(",").join(" | "),
                 type: "hot", 
                 image: finalHotDrink.image,
                 oneSize: finalHotDrink.oneSize,
@@ -30,7 +30,7 @@ const cleanDrinkData = (hotData, coldData) => {
       return {
                 name: drink.title,
                 description: drink.description, 
-                ingredients: drink.ingredients.join(" ⎜ "),
+                ingredients: drink.ingredients.toString().split(",").join(" | "),
                 type: "iced", 
                 image: finalcedDrink.image,
                 oneSize: finalcedDrink.oneSize,
