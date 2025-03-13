@@ -6,9 +6,9 @@ Yes, we know it's spelled..."E-S-P-R-E-S-S-O". Pressed for time? Can't make it o
 
 ## Installation Instructions:
 [//]: <>
-1. Fork and clone [this repo](https://github.com/jsahim/showcase).
+1. Fork and clone [this repo](https://github.com/jsahim/xpresso).
 1. Copy the SSH key from the green "Code" button.
-1. In your terminal, use the command `git clone git@github.com:[https://github.com/jsahim/showcase]`.
+1. In your terminal, use the command `git clone git@github.com:[https://github.com/jsahim/xpresso]`.
 1. Run `npm install`.
 1. Do NOT run `npm audit fix --force` when prompted.
 1. Open the repo in your text editor to make any changes or inspect code.
