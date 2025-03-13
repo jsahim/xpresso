@@ -8,6 +8,7 @@
   flex-direction: column;
   text-align: center;
   width: 15%;
+  min-width: 170px;
   background-color: #ffcc33;
   border-right: 3px rgb(165, 139, 9) solid;
 }
